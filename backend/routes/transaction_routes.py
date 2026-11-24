@@ -832,7 +832,7 @@ def card_payment():
         # Get payment information
         # -------------------------------------------------
 
-        recipient = data.get("recipient")
+        recipient = data.get("recipient_account_number")
 
         amount = data.get("amount")
 
@@ -851,7 +851,7 @@ def card_payment():
 
             return jsonify({
                 "status": "error",
-                "message": "Recipient name is required"
+                "message": "Recipient account number is required"
             }), 400
 
         if amount is None or not pin:
@@ -957,6 +957,20 @@ def card_payment():
             return jsonify({
                 "status": "error",
                 "message": "Bank account not found"
+            }), 404
+        # -------------------------------------------------
+        # Verify recipient account
+        # -------------------------------------------------
+
+        recipient_account = Account.query.filter_by(
+            account_number=recipient.strip()
+        ).first()
+
+        if not recipient_account:
+
+            return jsonify({
+                "status": "error",
+                "message": "Recipient account not found"
             }), 404
 
         # -------------------------------------------------
