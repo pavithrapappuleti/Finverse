@@ -49,7 +49,7 @@ const Deposit = () => {
       setLoading(true);
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}api/deposit`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/deposit`,
         {
           method: "POST",
 

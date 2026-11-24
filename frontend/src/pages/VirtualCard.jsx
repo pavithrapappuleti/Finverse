@@ -232,7 +232,7 @@ function VirtualCard() {
           : "FROZEN";
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}api/card/status`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/card/status`,
         {
           method: "PUT",
 
@@ -307,7 +307,7 @@ function VirtualCard() {
         !onlinePayments;
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}api/card/online-payments`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/card/online-payments`,
         {
           method: "PUT",
 
@@ -391,7 +391,7 @@ function VirtualCard() {
       }
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/card/spending-limit`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/card/spending-limit`,
         {
           method: "PUT",
 
@@ -673,7 +673,7 @@ function VirtualCard() {
       setPaymentLoading(true);
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}api/card-payment`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/card-payment`,
         {
           method: "POST",
 

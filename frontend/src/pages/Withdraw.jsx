@@ -60,7 +60,7 @@ function Withdraw() {
 
     try {
       const response = await fetch(
-  `${import.meta.env.VITE_API_URL}/api/withdraw`,
+  `${import.meta.env.VITE_API_URL}/api/account/withdraw`,
   {
     method: "POST",
 
