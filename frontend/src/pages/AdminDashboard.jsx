@@ -21,9 +21,8 @@ const [statsLoading, setStatsLoading] = useState(true);
     setStatsLoading(true);
 
     const response = await fetch(
-      "http://127.0.0.1:5000/api/admin/dashboard-stats"
-    );
-
+  `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/dashboard-stats`
+);
     const data = await response.json();
 
     console.log("Dashboard Stats:", data);

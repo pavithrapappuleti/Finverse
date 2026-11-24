@@ -30,15 +30,14 @@ function AdminTransactions() {
       setLoading(true);
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/admin/transactions",
-        {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      );
-
+  `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/transactions`,
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+);
       const data = await response.json();
 
       console.log(

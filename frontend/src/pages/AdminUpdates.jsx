@@ -26,7 +26,7 @@ function AdminUpdates() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/admin/users"
+         `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/users`
       );
 
       const data = await response.json();
@@ -52,7 +52,7 @@ function AdminUpdates() {
       setFetching(true);
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/admin/updates"
+         `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/updates`
       );
 
       const data = await response.json();
@@ -102,7 +102,7 @@ function AdminUpdates() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/admin/updates",
+         `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/updates`,
         {
           method: "POST",
 
@@ -167,7 +167,7 @@ function AdminUpdates() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:5000/api/admin/updates/${id}`,
+         `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/updates/${id}`,
         {
           method: "DELETE"
         }

@@ -24,14 +24,14 @@ function AdminAccounts() {
       setLoading(true);
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/admin/accounts",
-        {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      );
+  `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/accounts`,
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+);
 
       const data = await response.json();
 

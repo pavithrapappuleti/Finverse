@@ -25,7 +25,7 @@ function AdminUsers() {
       setLoading(true);
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/admin/users",
+         `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/users`,
         {
           method: "GET",
           headers: {
@@ -82,7 +82,7 @@ function AdminUsers() {
   const viewKycDocument = (userId) => {
 
     const documentUrl =
-      `http://127.0.0.1:5000/api/admin/users/${userId}/kyc-document`;
+       `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/users/${userId}/kyc-document`;
 
     window.open(
       documentUrl,
@@ -156,7 +156,7 @@ function AdminUsers() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:5000/api/admin/users/${userId}/kyc/verify`,
+         `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/users/${userId}/kyc/verify`,
         {
           method: "PUT",
 
@@ -292,7 +292,7 @@ function AdminUsers() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:5000/api/admin/users/${userId}/kyc/reject`,
+         `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/users/${userId}/kyc/reject`,
         {
           method: "PUT",
 
@@ -452,7 +452,7 @@ function AdminUsers() {
     try {
 
       const response = await fetch(
-        `http://127.0.0.1:5000/api/admin/users/${userId}/status`,
+         `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/admin/users/${userId}/status`,
         {
           method: "PUT",
 
