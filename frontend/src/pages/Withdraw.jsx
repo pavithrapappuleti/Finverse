@@ -136,6 +136,7 @@ const handleWithdraw = async (e) => {
   try {
     const response = await fetch(
       `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/account/withdraw`,
+      
       {
         method: "POST",
         headers: {

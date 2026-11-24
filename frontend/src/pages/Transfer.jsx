@@ -138,7 +138,7 @@ function Transfer() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/transfer`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/transfer`,
         {
           method: "POST",
           headers: {
@@ -479,10 +479,8 @@ function Transfer() {
                   <strong>
                     ****
                     {String(
-                      transferData.recipient_account ||
-                        recipientAccount ||
-                        ""
-                    ).slice(-4)}
+  transferData.to_account || ""
+).slice(-4)}
                   </strong>
                 </div>
 
