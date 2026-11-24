@@ -42,7 +42,7 @@ function SavingsGoals() {
       setError("");
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/savings`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/savings`,
         {
           method: "GET",
 
@@ -160,7 +160,7 @@ function SavingsGoals() {
 
 
       const response = await fetch(
-       `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}api/savings`,
+       `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/savings`,
         {
           method: "POST",
 
@@ -304,7 +304,7 @@ function SavingsGoals() {
 
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}api/savings/${selectedGoal.goal_id}/add-money`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/savings/${selectedGoal.goal_id}/add-money`,
         {
           method: "POST",
 
