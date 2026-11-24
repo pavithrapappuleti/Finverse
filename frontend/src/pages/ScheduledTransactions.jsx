@@ -265,7 +265,7 @@ function ScheduledTransactions() {
               `${scheduledDate}T${scheduledTime}`,
 
             frequency: frequency,
-recipient_account_id: recipientAccountId.trim(),
+            recipient_account_id: recipientAccountId.trim(),
 
             pin: pin
 
@@ -572,15 +572,16 @@ recipient_account_id: recipientAccountId.trim(),
               </label>
 
               <input
-                type="number"
-                value={recipientAccountId}
-                onChange={(e) =>
-                  setRecipientAccountId(
-                    e.target.value
-                  )
-                }
-                placeholder="Enter recipient account number"
-              />
+  type="text"
+  value={recipientAccountId}
+  onChange={(e) =>
+    setRecipientAccountId(
+      e.target.value.replace(/\D/g, "")
+    )
+  }
+  placeholder="Enter recipient account number"
+  inputMode="numeric"
+/>
 
             </div>
 
