@@ -125,11 +125,12 @@ def deposit_money():
         db.session.commit()
     except Exception as e:
         db.session.rollback()
+        print("Withdrawl Error:",e)
 
-    return jsonify({
-        "status": "error",
-        "message": "Transaction failed"
-    }), 500
+        return jsonify({
+            "status": "error",
+            "message": "Transaction failed"
+        }), 500
 
     return jsonify({
         "status": "success",
@@ -231,15 +232,16 @@ def withdraw_money():
 
     # Save changes
     try:
-       db.session.add(transaction)
-       db.session.commit()
+        db.session.add(transaction)
+        db.session.commit()
     except Exception as e:
-       db.session.rollback()
+        db.session.rollback()
+        print("Deposit Error:",e)
 
-    return jsonify({
-        "status": "error",
-        "message": "Transaction failed"
-    }), 500
+        return jsonify({
+            "status": "error",
+            "message": "Transaction failed"
+        }), 500
 
     return jsonify({
         "status": "success",
