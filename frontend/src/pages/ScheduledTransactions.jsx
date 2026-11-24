@@ -227,7 +227,7 @@ function ScheduledTransactions() {
     try {
 
       const token = localStorage.getItem("token");
-
+      console.log("JWT Token:", token);
       if (!token) {
 
         alert("Please login again.");
