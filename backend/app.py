@@ -105,8 +105,9 @@ jwt = JWTManager(app)
 # Enable CORS
 # --------------------------------
 
-CORS(app)
-
+CORS(app, origins=[
+    "https://finverse-flax.vercel.app"
+])
 
 # --------------------------------
 # Initialize Database
