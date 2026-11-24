@@ -24,7 +24,7 @@ function Login() {
     try {
       // Flask API
       const response = await fetch(
-  `${import.meta.env.VITE_API_URL}/api/login`,
+  `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/login`,
         {
           method: "POST",
 
