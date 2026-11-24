@@ -43,7 +43,7 @@ function Balance() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/account/balance",
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/account/balance`,
         {
           method: "POST",
           headers: {

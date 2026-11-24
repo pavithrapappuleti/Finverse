@@ -61,13 +61,13 @@ function Dashboard() {
       }
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/history",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+  `${import.meta.env.VITE_API_URL}/api/history`,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+);
 
       const data = await response.json();
 
@@ -96,7 +96,7 @@ function Dashboard() {
       const token = getToken();
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/savings",
+        `${import.meta.env.VITE_API_URL}/api/savings`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -136,7 +136,7 @@ function Dashboard() {
       setNotificationLoading(true);
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/notifications",
+        `${import.meta.env.VITE_API_URL}/api/notifications`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -175,7 +175,7 @@ function Dashboard() {
       const token = getToken();
 
       const response = await fetch(
-        `http://127.0.0.1:5000/api/notifications/${notificationId}/read`,
+        `${import.meta.env.VITE_API_URL}/api/notifications/${notificationId}/read`,
         {
           method: "PUT",
           headers: {
@@ -229,7 +229,7 @@ function Dashboard() {
       const token = getToken();
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/notifications/read-all",
+        `${import.meta.env.VITE_API_URL}/api/notifications/read-all`,
         {
           method: "PUT",
           headers: {

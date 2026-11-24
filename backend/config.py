@@ -6,13 +6,6 @@ from datetime import timedelta
 
 load_dotenv()
 
-# SSL certificate location
-CA_CERT_PATH = os.getenv(
-    "DB_SSL_CA",
-    os.path.join(os.path.dirname(__file__), "ca.pem")
-)
-
-
 class Config:
 
     SQLALCHEMY_DATABASE_URI = URL.create(
@@ -24,15 +17,24 @@ class Config:
         database=os.getenv("DB_NAME")
     )
 
-    SQLALCHEMY_ENGINE_OPTIONS = {
-        "connect_args": {
-            "ssl": {
-                "ca": CA_CERT_PATH
-            }
-        },
-        "pool_pre_ping": True,
-        "pool_recycle": 280
-    }
+    # Enable SSL only when a CA certificate is configured
+    ca_cert_path = os.getenv("DB_SSL_CA")
+
+    if ca_cert_path:
+        SQLALCHEMY_ENGINE_OPTIONS = {
+            "connect_args": {
+                "ssl": {
+                    "ca": ca_cert_path
+                }
+            },
+            "pool_pre_ping": True,
+            "pool_recycle": 280
+        }
+    else:
+        SQLALCHEMY_ENGINE_OPTIONS = {
+            "pool_pre_ping": True,
+            "pool_recycle": 280
+        }
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
