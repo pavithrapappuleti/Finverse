@@ -1,0 +1,594 @@
+/* =====================================================
+   HISTORY PAGE
+   ===================================================== */
+
+.history-page {
+  padding: 35px 40px 50px;
+  min-height: 100vh;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.history-label {
+  margin: 0 0 7px;
+  color: #18c8ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.history-header h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.history-subtitle {
+  margin-top: 8px;
+  color: #9baac2;
+  font-size: 14px;
+}
+
+.history-refresh {
+  border: 1px solid rgba(24, 200, 255, 0.35);
+  background: linear-gradient(
+    135deg,
+    #0d5be0,
+    #00c6ff
+  );
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 198, 255, 0.18);
+  transition: 0.25s ease;
+}
+
+.history-refresh:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 198, 255, 0.28);
+}
+
+.history-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   SUMMARY CARDS
+   ===================================================== */
+
+.history-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.history-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 21px;
+  border-radius: 16px;
+
+  background: rgba(11, 25, 52, 0.78);
+
+  border: 1px solid rgba(44, 130, 255, 0.20);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18),
+    inset 0 0 25px rgba(0, 153, 255, 0.025);
+
+  transition: 0.25s ease;
+}
+
+.history-summary-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(24, 200, 255, 0.42);
+}
+
+.history-summary-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(13, 91, 224, 0.85),
+    rgba(0, 198, 255, 0.75)
+  );
+
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 18px rgba(0, 198, 255, 0.18);
+}
+
+.history-summary-card p {
+  margin: 0 0 5px;
+  color: #8999b3;
+  font-size: 12px;
+}
+
+.history-summary-card h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+
+/* =====================================================
+   ERROR
+   ===================================================== */
+
+.history-error {
+  margin-bottom: 20px;
+  padding: 14px 18px;
+
+  border-radius: 10px;
+
+  color: #ffb5b5;
+  background: rgba(180, 30, 30, 0.12);
+  border: 1px solid rgba(255, 70, 70, 0.28);
+
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   HISTORY CARD
+   ===================================================== */
+
+.history-card {
+  background: rgba(9, 22, 47, 0.82);
+
+  border: 1px solid rgba(44, 130, 255, 0.20);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =====================================================
+   CARD HEADER
+   ===================================================== */
+
+.history-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 25px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.history-card-header h2 {
+  margin: 0;
+  color: white;
+  font-size: 18px;
+}
+
+.history-card-header p {
+  margin: 6px 0 0;
+  color: #8797b1;
+  font-size: 13px;
+}
+
+.history-count {
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  color: #55dfff;
+  background: rgba(0, 198, 255, 0.08);
+
+  border: 1px solid rgba(0, 198, 255, 0.18);
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+
+.history-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th {
+  padding: 15px 22px;
+
+  color: #7e90aa;
+
+  background: rgba(255, 255, 255, 0.018);
+
+  font-size: 11px;
+  text-align: left;
+
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.history-table td {
+  padding: 17px 22px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.055);
+
+  color: #dce7f8;
+
+  font-size: 13px;
+}
+
+.history-table tbody tr {
+  transition: 0.2s ease;
+}
+
+.history-table tbody tr:hover {
+  background: rgba(0, 198, 255, 0.035);
+}
+
+
+/* =====================================================
+   TRANSACTION
+   ===================================================== */
+
+.history-transaction {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.history-type-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.history-transaction strong {
+  display: block;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.history-transaction small {
+  display: block;
+  margin-top: 4px;
+  color: #72839e;
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   TRANSACTION COLORS
+   ===================================================== */
+
+.history-deposit {
+  color: #35d8ff;
+  background: rgba(0, 198, 255, 0.10);
+}
+
+.history-withdraw {
+  color: #ffd36b;
+  background: rgba(255, 193, 7, 0.10);
+}
+
+.history-transfer {
+  color: #72a8ff;
+  background: rgba(45, 115, 255, 0.12);
+}
+
+.history-default {
+  color: #b8c6d9;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* =====================================================
+   DATE
+   ===================================================== */
+
+.history-date {
+  color: #a7b5c9;
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.history-description {
+  color: #aab8cb;
+}
+
+
+/* =====================================================
+   AMOUNT
+   ===================================================== */
+
+.history-amount {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.amount-credit {
+  color: #39d9ff;
+}
+
+.amount-debit {
+  color: #ffd36b;
+}
+
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.history-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status-success {
+  color: #42d9a5;
+  background: rgba(45, 211, 150, 0.08);
+  border: 1px solid rgba(45, 211, 150, 0.15);
+}
+
+.status-failed {
+  color: #ff7777;
+  background: rgba(255, 70, 70, 0.08);
+  border: 1px solid rgba(255, 70, 70, 0.15);
+}
+
+.history-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+
+/* =====================================================
+   LOADING
+   ===================================================== */
+
+.history-loading {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #8999b3;
+}
+
+.history-spinner {
+  width: 35px;
+  height: 35px;
+
+  border: 3px solid rgba(255, 255, 255, 0.10);
+  border-top-color: #18c8ff;
+
+  border-radius: 50%;
+
+  animation: history-spin 0.8s linear infinite;
+
+  margin-bottom: 15px;
+}
+
+@keyframes history-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =====================================================
+   EMPTY
+   ===================================================== */
+
+.history-empty {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 40px;
+}
+
+.history-empty-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 18px;
+
+  background: rgba(0, 198, 255, 0.07);
+  border: 1px solid rgba(0, 198, 255, 0.14);
+
+  color: #28ceff;
+
+  font-size: 27px;
+
+  margin-bottom: 18px;
+}
+
+.history-empty h3 {
+  margin: 0;
+
+  color: white;
+  font-size: 18px;
+}
+
+.history-empty p {
+  max-width: 420px;
+
+  margin-top: 8px;
+
+  color: #8191aa;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   SECURITY
+   ===================================================== */
+
+.history-security {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 20px;
+
+  padding: 18px 20px;
+
+  border-radius: 14px;
+
+  background: rgba(11, 30, 61, 0.65);
+
+  border: 1px solid rgba(0, 198, 255, 0.13);
+}
+
+.history-security-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(0, 198, 255, 0.08);
+
+  font-size: 18px;
+}
+
+.history-security h3 {
+  margin: 0 0 5px;
+
+  color: #dbeaff;
+  font-size: 13px;
+}
+
+.history-security p {
+  margin: 0;
+
+  color: #7e90aa;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+  .history-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .history-page {
+    padding: 25px 18px 40px;
+  }
+
+  .history-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .history-header h1 {
+    font-size: 26px;
+  }
+
+  .history-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .history-summary-card {
+    padding: 17px;
+  }
+
+  .history-card-header {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .history-table {
+    min-width: 800px;
+  }
+
+  .history-security {
+    align-items: flex-start;
+  }
+
+}

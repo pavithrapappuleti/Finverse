@@ -1,0 +1,383 @@
+.admin-transactions-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.admin-transactions-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.admin-transactions-title h1 {
+  margin: 0;
+  color: #241b52;
+  font-size: 28px;
+}
+
+.admin-transactions-title p {
+  margin: 6px 0 0;
+  color: black;
+  font-size: 14px;
+}
+
+
+/* SUMMARY */
+
+.admin-transactions-summary {
+  display: flex;
+  gap: 25px;
+}
+
+.admin-transactions-summary div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.admin-transactions-summary strong {
+  color: purple;
+  font-size: 20px;
+}
+
+.admin-transactions-summary span {
+  color: black;
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+
+/* CONTROLS */
+
+.admin-transactions-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.admin-transactions-search {
+  flex: 1;
+  height: 48px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.admin-transactions-search span {
+  color: #888;
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.admin-transactions-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #333;
+}
+
+.admin-transaction-filter {
+  width: 150px;
+  height: 48px;
+  border: 1px solid #e5e5e5;
+  background: white;
+  border-radius: 10px;
+  padding: 0 12px;
+  color: #444;
+  outline: none;
+}
+
+
+/* CARD */
+
+.admin-transactions-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(36, 27, 82, 0.07);
+  overflow: hidden;
+}
+
+.admin-transactions-card-header {
+  padding: 22px 25px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.admin-transactions-card-header h2 {
+  margin: 0;
+  color: #241b52;
+  font-size: 19px;
+}
+
+.admin-transactions-card-header p {
+  margin: 5px 0 0;
+  color: #888;
+  font-size: 12px;
+}
+
+
+/* TABLE */
+
+.admin-transactions-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-transactions-table {
+  width: 100%;
+  min-width: 1150px;
+  border-collapse: collapse;
+}
+
+.admin-transactions-table th {
+  background: #faf9ff;
+  color: #777;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 15px 16px;
+  text-align: left;
+}
+
+.admin-transactions-table td {
+  padding: 15px 16px;
+  border-top: 1px solid #f0f0f0;
+  color: #555;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.admin-transactions-table tbody tr:hover {
+  background: #fcfbff;
+}
+
+
+/* TRANSACTION ID */
+
+.transaction-id {
+  color: #241b52;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+
+/* CUSTOMER */
+
+.transaction-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.transaction-avatar {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background: #f0edff;
+  color: #241b52;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.transaction-user div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.transaction-user strong {
+  color: #333;
+  font-size: 12px;
+}
+
+.transaction-user span {
+  color: #999;
+  font-size: 10px;
+}
+
+
+/* ACCOUNT */
+
+.transaction-account {
+  font-family: monospace;
+  color: #555;
+  font-size: 11px;
+}
+
+
+/* TYPE */
+
+.transaction-type {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.transaction-type.deposit {
+  background: #e8f8ef;
+  color: #21864a;
+}
+
+.transaction-type.withdraw {
+  background: #fff0f0;
+  color: #c74343;
+}
+
+.transaction-type.transfer {
+  background: #eeeaff;
+  color: #51439a;
+}
+
+
+/* AMOUNT */
+
+.transaction-amount {
+  font-size: 12px;
+}
+
+.transaction-amount.deposit {
+  color: #21864a;
+}
+
+.transaction-amount.withdraw {
+  color: #c74343;
+}
+
+.transaction-amount.transfer {
+  color: #51439a;
+}
+
+
+/* DESCRIPTION */
+
+.transaction-description {
+  color: #777;
+  font-size: 11px;
+  display: block;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* STATUS */
+
+.transaction-status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.transaction-status.success {
+  background: #e8f8ef;
+  color: #21864a;
+}
+
+.transaction-status.pending {
+  background: #fff8df;
+  color: #a17a00;
+}
+
+.transaction-status.failed {
+  background: #fff0f0;
+  color: #c74343;
+}
+
+
+/* DATE */
+
+.transaction-date {
+  color: #777;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+
+/* LOADING */
+
+.admin-transactions-loading {
+  padding: 60px 20px;
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+}
+
+
+/* EMPTY */
+
+.admin-transactions-empty {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.admin-transactions-empty div {
+  font-size: 35px;
+}
+
+.admin-transactions-empty h3 {
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.admin-transactions-empty p {
+  margin: 0;
+  color: #999;
+  font-size: 12px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+  .admin-transactions-summary {
+    display: none;
+  }
+
+  .admin-transactions-controls {
+    flex-wrap: wrap;
+  }
+
+  .admin-transactions-search {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .admin-transaction-filter {
+    flex: 1;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .admin-dashboard-main {
+    padding: 20px 15px;
+  }
+
+  .admin-transactions-title h1 {
+    font-size: 22px;
+  }
+
+  .admin-transactions-title p {
+    font-size: 12px;
+  }
+
+  .admin-transaction-filter {
+    width: 100%;
+  }
+
+}

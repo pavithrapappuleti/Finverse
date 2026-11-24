@@ -1,0 +1,2730 @@
+/* =========================================================
+   FINVERSE DASHBOARD
+   RESPONSIVE MAIN LAYOUT
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.dashboard {
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f8fc;
+  color: #10253f;
+  display: flex;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   DO NOT CHANGE - USED BY Sidebar.jsx
+   ========================================================= */
+
+.dashboard-sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #06182d;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: 24px 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-logo {
+  height: 75px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.sidebar-logo img {
+  width: 145px;
+  height: 75px;
+
+  object-fit: contain;
+}
+
+.menu-title {
+  color: #6e849e;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  padding: 0 13px;
+
+  margin: 12px 0;
+}
+
+.settings-title {
+  margin-top: 30px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.sidebar-item {
+  width: 100%;
+  height: 47px;
+
+  border: none;
+  background: transparent;
+
+  color: #aebfd1;
+
+  border-radius: 9px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  font-size: 13px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.sidebar-item span {
+  width: 22px;
+
+  text-align: center;
+
+  font-size: 16px;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+
+  color: white;
+}
+
+.sidebar-item.active {
+  background: linear-gradient(
+    90deg,
+    #00bfe8,
+    #087fd0
+  );
+
+  color: white;
+
+  box-shadow:
+    0 8px 20px rgba(0, 180, 230, 0.18);
+}
+
+.logout-item {
+  margin-top: 5px;
+}
+
+.logout-item:hover {
+  color: #ff7373;
+}
+
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.dashboard-main {
+  margin-left: 250px;
+
+  width: calc(100% - 250px);
+
+  min-height: 100vh;
+
+  background: #f4f8fc;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+   ========================================================= */
+
+.dashboard-header {
+  min-height: 125px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5edf4;
+
+  padding: 28px 38px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  position: relative;
+}
+
+.dashboard-breadcrumb {
+  color: #08a5d1;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+
+  margin-bottom: 9px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+
+  color: #092b50;
+
+  font-size: 26px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+}
+
+.dashboard-header p {
+  margin: 7px 0 0;
+
+  color: #8094a9;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.dashboard-content {
+  width: 100%;
+
+  max-width: 1450px;
+
+  margin: 0 auto;
+
+  padding: 28px 38px 55px;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   BALANCE CARD
+   ========================================================= */
+
+.dashboard-balance-card {
+  position: relative;
+
+  min-height: 185px;
+
+  padding: 30px 34px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      135deg,
+      #06233f 0%,
+      #073b62 55%,
+      #0878aa 100%
+    );
+
+  color: white;
+
+  box-shadow:
+    0 14px 35px rgba(8, 63, 101, 0.18);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.dashboard-balance-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 18px 40px rgba(8, 63, 101, 0.23);
+}
+
+
+/* =========================================================
+   BALANCE DECORATIVE CIRCLES
+   ========================================================= */
+
+.dashboard-balance-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  right: -120px;
+  top: -170px;
+
+  border-radius: 50%;
+
+  border: 45px solid rgba(255, 255, 255, 0.055);
+}
+
+.dashboard-balance-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: 100px;
+  bottom: -135px;
+
+  border-radius: 50%;
+
+  border: 30px solid rgba(0, 204, 235, 0.06);
+}
+
+.balance-card-left {
+  position: relative;
+
+  z-index: 2;
+}
+
+.balance-label {
+  display: block;
+
+  color: #9ec2d8;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 10px;
+}
+
+.balance-card-left h2 {
+  margin: 0;
+
+  font-size: 35px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.balance-card-left p {
+  margin: 9px 0 0;
+
+  color: #9eb9cc;
+
+  font-size: 12px;
+}
+
+.balance-card-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 65px;
+  height: 65px;
+
+  border-radius: 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.11);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+
+  font-size: 27px;
+
+  font-weight: 700;
+
+  backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   ACCOUNT INFORMATION
+   ========================================================= */
+
+.dashboard-account-info {
+  margin-top: 12px;
+
+  min-height: 58px;
+
+  padding: 0 22px;
+
+  background: white;
+
+  border: 1px solid #e1eaf1;
+
+  border-radius: 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  box-shadow:
+    0 4px 15px rgba(25, 68, 101, 0.035);
+
+  min-width: 0;
+}
+
+.dashboard-account-info > span {
+  color: #8497aa;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ACCOUNT NUMBER
+   ========================================================= */
+
+.account-number-wrapper {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 14px;
+
+  min-width: 0;
+}
+
+.account-number-wrapper strong {
+  color: #163b5d;
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+
+  min-width: 120px;
+
+  text-align: right;
+
+  white-space: nowrap;
+}
+
+.account-eye-button {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  border: 1px solid #dce7ef;
+
+  border-radius: 9px;
+
+  background: #f7fafc;
+
+  color: #527089;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.account-eye-button:hover {
+  background: #eaf7fc;
+
+  border-color: #8ed5e8;
+
+  color: #087fd0;
+
+  transform: scale(1.05);
+}
+
+.account-eye-button:active {
+  transform: scale(0.95);
+}
+
+
+/* =========================================================
+   TWO COLUMN GRID
+   ========================================================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(0, 0.85fr);
+
+  gap: 20px;
+
+  margin-top: 20px;
+
+  align-items: stretch;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   COMMON DASHBOARD CARD
+   ========================================================= */
+
+.dashboard-card {
+  background: #ffffff;
+
+  border: 1px solid #e0e9f1;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 7px 22px rgba(24, 61, 95, 0.045);
+
+  overflow: hidden;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.dashboard-card-header {
+  padding: 21px 23px 17px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-bottom: 1px solid #edf2f6;
+}
+
+.dashboard-card-label {
+  display: block;
+
+  color: #08a5d1;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 5px;
+}
+
+.dashboard-card-header h3 {
+  margin: 0;
+
+  color: #123452;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.dashboard-card-month {
+  padding: 6px 10px;
+
+  border-radius: 7px;
+
+  background: #f1f8fc;
+
+  color: #678198;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.view-link {
+  border: none;
+
+  background: transparent;
+
+  color: #008fbd;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  padding: 4px 0;
+
+  transition: 0.2s ease;
+
+  white-space: nowrap;
+}
+
+.view-link:hover {
+  color: #006b91;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   MONTHLY EXPENDITURE
+   ========================================================= */
+
+.expenditure-card {
+  min-height: 330px;
+}
+
+.expenditure-content {
+  padding: 23px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 35px;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   PIE CHART
+   ========================================================= */
+
+.expense-pie {
+  width: 190px;
+  height: 190px;
+
+  min-width: 190px;
+
+  border-radius: 50%;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow:
+    0 8px 25px rgba(30, 78, 120, 0.08);
+}
+
+.expense-pie::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 3px 12px rgba(21, 65, 98, 0.05);
+}
+
+.expense-pie-center {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.expense-pie-center strong {
+  color: #123452;
+
+  font-size: 17px;
+
+  font-weight: 800;
+}
+
+.expense-pie-center span {
+  margin-top: 5px;
+
+  color: #899bab;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   EXPENDITURE LEGEND
+   ========================================================= */
+
+.expense-legend {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+.legend-item {
+  display: grid;
+
+  grid-template-columns: 10px minmax(0, 1fr) auto;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-height: 36px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+}
+
+.legend-dot.withdraw {
+  background: #1769ff;
+}
+
+.legend-dot.transfer {
+  background: #19c9e8;
+}
+
+.legend-dot.card {
+  background: #ff9f43;
+}
+
+.legend-dot.savings {
+  background: #7c5cff;
+}
+
+.legend-item div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.legend-item strong {
+  color: #26435e;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.legend-item small {
+  color: #92a2b1;
+
+  font-size: 9px;
+}
+
+.legend-item b {
+  color: #526c83;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   SAVINGS GOAL
+   ========================================================= */
+
+.savings-card {
+  min-height: 330px;
+
+  min-width: 0;
+}
+
+.dashboard-savings-content {
+  padding: 25px 23px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+}
+
+.savings-goal-icon {
+  width: 47px;
+  height: 47px;
+
+  min-width: 47px;
+
+  border-radius: 13px;
+
+  background: #eef5ff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 21px;
+}
+
+.savings-goal-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.savings-goal-info h4 {
+  margin: 0 0 5px;
+
+  color: #173754;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.savings-goal-info p {
+  margin: 0;
+
+  color: #8b9dad;
+
+  font-size: 10px;
+}
+
+.savings-percent {
+  color: #078bc1;
+
+  font-size: 19px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   SAVINGS PROGRESS
+   ========================================================= */
+
+.savings-progress {
+  padding: 8px 23px 23px;
+}
+
+.savings-progress-track {
+  width: 100%;
+
+  height: 8px;
+
+  background: #e8f0f5;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.savings-progress-fill {
+  height: 100%;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #09bdd7,
+      #087fd8
+    );
+
+  transition: width 0.5s ease;
+}
+
+.savings-progress-bottom {
+  margin-top: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.savings-progress-bottom span {
+  color: #92a2b0;
+
+  font-size: 9px;
+}
+
+.savings-progress-bottom strong {
+  color: #365570;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   NO SAVINGS GOAL
+   ========================================================= */
+
+.no-goal {
+  min-height: 225px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+.no-goal > div {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #eef6ff;
+
+  border-radius: 14px;
+
+  font-size: 22px;
+
+  margin-bottom: 10px;
+}
+
+.no-goal h4 {
+  margin: 0;
+
+  color: #183853;
+
+  font-size: 13px;
+}
+
+.no-goal p {
+  margin: 6px 0 14px;
+
+  color: #8c9cab;
+
+  font-size: 10px;
+}
+
+.no-goal button {
+  border: none;
+
+  padding: 9px 15px;
+
+  border-radius: 8px;
+
+  background: #087fd0;
+
+  color: white;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.no-goal button:hover {
+  background: #066eb7;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RECENT TRANSACTIONS
+   ========================================================= */
+
+.transactions-card {
+  margin-top: 20px;
+}
+
+.transaction-list {
+  padding: 5px 23px 12px;
+}
+
+.dashboard-transaction {
+  min-height: 62px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  border-bottom: 1px solid #edf2f5;
+
+  min-width: 0;
+}
+
+.dashboard-transaction:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   TRANSACTION ICON
+   ========================================================= */
+
+.dashboard-transaction .transaction-icon {
+  width: 39px;
+  height: 39px;
+
+  min-width: 39px;
+
+  border-radius: 11px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.dashboard-transaction .transaction-icon.income {
+  background: #e8f9f2;
+
+  color: #16a765;
+}
+
+.dashboard-transaction .transaction-icon.expense {
+  background: #edf6ff;
+
+  color: #1683c4;
+}
+
+
+/* =========================================================
+   TRANSACTION DETAILS
+   ========================================================= */
+
+.transaction-details {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.transaction-details strong {
+  color: #23415c;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.transaction-details span {
+  color: #98a7b4;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   TRANSACTION AMOUNT
+   ========================================================= */
+
+.transaction-amount {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
+}
+
+.amount-income {
+  color: #19a968;
+}
+
+.amount-expense {
+  color: #e25d5d;
+}
+
+
+/* =========================================================
+   EMPTY TRANSACTIONS
+   ========================================================= */
+
+.empty-transactions {
+  min-height: 130px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #94a4b2;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   CHATBOT FLOATING BUTTON
+   ========================================================= */
+
+.chatbot-floating-button {
+  position: fixed;
+
+  right: 28px;
+  bottom: 28px;
+
+  width: 58px;
+  height: 58px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #09bfdc,
+      #087fd4
+    );
+
+  color: white;
+
+  font-size: 23px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 1000;
+
+  box-shadow:
+    0 12px 30px rgba(0, 137, 190, 0.30);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.chatbot-floating-button:hover {
+  transform: translateY(-3px) scale(1.03);
+
+  box-shadow:
+    0 16px 35px rgba(0, 137, 190, 0.38);
+}
+
+.chatbot-floating-button.chat-active {
+  background: #082d4d;
+
+  font-size: 25px;
+}
+
+
+/* =========================================================
+   CHATBOT PANEL
+   ========================================================= */
+
+.chatbot-panel {
+  position: fixed;
+
+  right: 28px;
+  bottom: 98px;
+
+  width: 355px;
+  height: 500px;
+
+  max-width: calc(100vw - 30px);
+
+  background: white;
+
+  border: 1px solid #dce7ef;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  z-index: 999;
+
+  box-shadow:
+    0 20px 60px rgba(12, 46, 75, 0.20);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform:
+    translateY(18px)
+    scale(0.96);
+
+  transform-origin: bottom right;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+}
+
+.chatbot-panel.chatbot-open {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =========================================================
+   CHATBOT HEADER
+   ========================================================= */
+
+.chatbot-header {
+  min-height: 72px;
+
+  padding: 13px 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #062440,
+      #07476c
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: white;
+}
+
+.chatbot-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 0;
+}
+
+.chatbot-avatar {
+  width: 41px;
+  height: 41px;
+
+  min-width: 41px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 20px;
+}
+
+.chatbot-title div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.chatbot-title strong {
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.chatbot-title span {
+  color: #65dca9;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+.chatbot-close {
+  width: 31px;
+  height: 31px;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.chatbot-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================================================
+   CHATBOT BODY
+   ========================================================= */
+
+.chatbot-body {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+
+  padding: 18px;
+
+  background: #f7fafc;
+}
+
+.chatbot-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chatbot-body::-webkit-scrollbar-thumb {
+  background: #cbd9e4;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   BOT MESSAGE
+   ========================================================= */
+
+.bot-message {
+  max-width: 85%;
+
+  width: fit-content;
+
+  margin-bottom: 12px;
+
+  padding: 11px 13px;
+
+  border-radius: 12px 12px 12px 4px;
+
+  background: white;
+
+  border: 1px solid #e1eaf1;
+
+  color: #39536b;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+
+  box-shadow:
+    0 3px 10px rgba(30, 67, 96, 0.035);
+}
+
+
+/* =========================================================
+   USER MESSAGE
+   ========================================================= */
+
+.user-message {
+  max-width: 85%;
+
+  width: fit-content;
+
+  margin-left: auto;
+
+  margin-bottom: 10px;
+
+  padding: 10px 13px;
+
+  border-radius: 12px 12px 4px 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0abbd7,
+      #087fd0
+    );
+
+  color: white;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CHATBOT QUESTIONS
+   ========================================================= */
+
+.chatbot-questions {
+  margin-top: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.chatbot-questions > span {
+  color: #7f94a8;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 2px;
+}
+
+.chatbot-questions button {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  text-align: left;
+
+  border: 1px solid #dce7ef;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #31516d;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.chatbot-questions button:hover {
+  border-color: #8bd5e9;
+
+  background: #f0faff;
+
+  color: #087fb1;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   SIDEBAR MOBILE OVERLAY
+   ========================================================= */
+
+.sidebar-overlay {
+  display: none;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .dashboard-content {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .dashboard-header {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .savings-card {
+    min-height: auto;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .dashboard-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+  .dashboard-sidebar {
+    transform: translateX(-100%);
+
+    transition:
+      transform 0.3s ease;
+  }
+
+  .dashboard-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 90;
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+
+    width: 100%;
+
+    min-width: 0;
+  }
+
+
+  /* =======================================================
+     DASHBOARD HEADER MOBILE
+     ======================================================= */
+
+  .dashboard-header {
+    min-height: 105px;
+
+    padding: 23px 18px;
+  }
+
+  .dashboard-breadcrumb {
+    font-size: 9px;
+
+    margin-bottom: 7px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 20px;
+  }
+
+  .dashboard-header p {
+    font-size: 11px;
+  }
+
+
+  /* =======================================================
+     DASHBOARD CONTENT MOBILE
+     ======================================================= */
+
+  .dashboard-content {
+    padding: 18px 15px 35px;
+  }
+
+
+  /* =======================================================
+     BALANCE CARD MOBILE
+     ======================================================= */
+
+  .dashboard-balance-card {
+    min-height: 160px;
+
+    padding: 25px 22px;
+
+    border-radius: 17px;
+  }
+
+  .balance-card-left h2 {
+    font-size: 28px;
+  }
+
+  .balance-card-icon {
+    width: 53px;
+    height: 53px;
+
+    font-size: 22px;
+  }
+
+
+  /* =======================================================
+     ACCOUNT INFO MOBILE
+     ======================================================= */
+
+  .dashboard-account-info {
+    padding: 0 16px;
+
+    min-height: 53px;
+  }
+
+  .dashboard-account-info > span {
+    font-size: 8px;
+  }
+
+  .account-number-wrapper {
+    gap: 10px;
+  }
+
+  .account-number-wrapper strong {
+    min-width: 105px;
+
+    font-size: 10px;
+  }
+
+  .account-eye-button {
+    width: 32px;
+    height: 32px;
+
+    font-size: 14px;
+  }
+
+
+  /* =======================================================
+     DASHBOARD GRID MOBILE
+     ======================================================= */
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+
+  /* =======================================================
+     EXPENDITURE MOBILE
+     ======================================================= */
+
+  .expenditure-content {
+    flex-direction: column;
+
+    gap: 25px;
+
+    padding: 25px;
+  }
+
+  .expense-pie {
+    width: 175px;
+    height: 175px;
+
+    min-width: 175px;
+  }
+
+  .expense-pie::before {
+    width: 110px;
+    height: 110px;
+  }
+
+  .expense-legend {
+    width: 100%;
+  }
+
+
+  /* =======================================================
+     TRANSACTIONS MOBILE
+     ======================================================= */
+
+  .transactions-card {
+    margin-top: 16px;
+  }
+
+
+  /* =======================================================
+     CHATBOT MOBILE
+     ======================================================= */
+
+  .chatbot-floating-button {
+    right: 18px;
+
+    bottom: 18px;
+
+    width: 54px;
+    height: 54px;
+  }
+
+  .chatbot-panel {
+    right: 15px;
+
+    bottom: 84px;
+
+    width: calc(100% - 30px);
+
+    max-width: 355px;
+
+    height: 475px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+  .dashboard-header {
+    padding: 20px 15px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 18px;
+  }
+
+  .dashboard-header p {
+    font-size: 10px;
+  }
+
+
+  .dashboard-content {
+    padding: 15px 12px 30px;
+  }
+
+
+  /* =======================================================
+     BALANCE
+     ======================================================= */
+
+  .dashboard-balance-card {
+    padding: 22px 18px;
+
+    min-height: 145px;
+  }
+
+  .balance-label {
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .balance-card-left h2 {
+    font-size: 25px;
+  }
+
+  .balance-card-left p {
+    font-size: 10px;
+  }
+
+  .balance-card-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 12px;
+
+    font-size: 19px;
+  }
+
+
+  /* =======================================================
+     ACCOUNT NUMBER
+     ======================================================= */
+
+  .dashboard-account-info {
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8px;
+
+    padding: 0 12px;
+
+    min-height: 52px;
+  }
+
+  .dashboard-account-info > span {
+    font-size: 7px;
+
+    letter-spacing: 1.1px;
+
+    white-space: nowrap;
+  }
+
+  .account-number-wrapper {
+    gap: 8px;
+
+    min-width: 0;
+  }
+
+  .account-number-wrapper strong {
+    min-width: 90px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.7px;
+  }
+
+  .account-eye-button {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+  }
+
+
+  /* =======================================================
+     DASHBOARD CARDS
+     ======================================================= */
+
+  .dashboard-card-header {
+    padding: 18px 17px 15px;
+  }
+
+  .dashboard-card-header h3 {
+    font-size: 16px;
+  }
+
+  .dashboard-card-month {
+    display: none;
+  }
+
+
+  /* =======================================================
+     EXPENDITURE
+     ======================================================= */
+
+  .expenditure-content {
+    padding: 20px 17px;
+  }
+
+  .expense-pie {
+    width: 160px;
+    height: 160px;
+
+    min-width: 160px;
+  }
+
+  .expense-pie::before {
+    width: 100px;
+    height: 100px;
+  }
+
+  .expense-pie-center strong {
+    font-size: 15px;
+  }
+
+  .legend-item strong {
+    font-size: 10px;
+  }
+
+  .legend-item small {
+    font-size: 8px;
+  }
+
+
+  /* =======================================================
+     SAVINGS
+     ======================================================= */
+
+  .dashboard-savings-content {
+    padding-left: 17px;
+
+    padding-right: 17px;
+  }
+
+  .savings-progress {
+    padding-left: 17px;
+
+    padding-right: 17px;
+  }
+
+
+  /* =======================================================
+     TRANSACTIONS
+     ======================================================= */
+
+  .transaction-list {
+    padding-left: 17px;
+
+    padding-right: 17px;
+  }
+
+  .dashboard-transaction {
+    gap: 9px;
+  }
+
+  .dashboard-transaction .transaction-icon {
+    width: 35px;
+    height: 35px;
+
+    min-width: 35px;
+
+    font-size: 14px;
+  }
+
+  .transaction-details strong {
+    font-size: 10px;
+  }
+
+  .transaction-details span {
+    font-size: 8px;
+  }
+
+  .transaction-amount {
+    font-size: 10px;
+  }
+
+
+  /* =======================================================
+     CHATBOT
+     ======================================================= */
+
+  .chatbot-panel {
+    right: 10px;
+
+    bottom: 78px;
+
+    width: calc(100% - 20px);
+
+    height: 455px;
+
+    border-radius: 15px;
+  }
+
+  .chatbot-floating-button {
+    right: 15px;
+
+    bottom: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   LOGOUT MODAL OVERLAY
+   ========================================================= */
+
+.logout-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(2, 11, 28, 0.65);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 9999;
+
+  backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   LOGOUT MODAL
+   ========================================================= */
+
+.logout-modal {
+  width: 380px;
+
+  max-width: calc(100% - 40px);
+
+  padding: 30px;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25);
+
+  animation:
+    logoutModalAppear 0.2s ease;
+}
+
+
+/* =========================================================
+   LOGOUT ANIMATION
+   ========================================================= */
+
+@keyframes logoutModalAppear {
+
+  from {
+    opacity: 0;
+
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   LOGOUT ICON
+   ========================================================= */
+
+.logout-modal-icon {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e0f2fe;
+
+  font-size: 28px;
+}
+
+
+/* =========================================================
+   LOGOUT TITLE
+   ========================================================= */
+
+.logout-modal h2 {
+  margin: 0;
+
+  font-size: 23px;
+
+  color: #0f172a;
+}
+
+
+/* =========================================================
+   LOGOUT MESSAGE
+   ========================================================= */
+
+.logout-modal p {
+  margin: 10px 0 25px;
+
+  font-size: 15px;
+
+  color: #64748b;
+}
+
+
+/* =========================================================
+   LOGOUT BUTTONS
+   ========================================================= */
+
+.logout-modal-buttons {
+  display: flex;
+
+  gap: 12px;
+
+  justify-content: center;
+}
+
+.logout-no-btn,
+.logout-yes-btn {
+  flex: 1;
+
+  padding: 11px 20px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.logout-no-btn {
+  background: #f1f5f9;
+
+  color: #475569;
+}
+
+.logout-no-btn:hover {
+  background: #e2e8f0;
+}
+
+.logout-yes-btn {
+  background: #0ea5e9;
+
+  color: white;
+}
+
+.logout-yes-btn:hover {
+  background: #0284c7;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOGOUT MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+  .logout-modal {
+    width: 320px;
+
+    padding: 25px;
+  }
+
+}
+
+
+/* =========================================================
+   NOTIFICATION SYSTEM
+   ========================================================= */
+
+.notification-container {
+  position: relative;
+
+  margin-left: auto;
+}
+
+.notification-button {
+  position: relative;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid #dce7f0;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #31546f;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.notification-button:hover {
+  background: #f2f8fc;
+
+  color: #087fd0;
+
+  border-color: #b9dceb;
+}
+
+.notification-button svg {
+  width: 21px;
+
+  height: 21px;
+}
+
+
+/* =========================================================
+   NOTIFICATION BADGE
+   ========================================================= */
+
+.notification-badge {
+  position: absolute;
+
+  top: -5px;
+
+  right: -5px;
+
+  min-width: 18px;
+
+  height: 18px;
+
+  padding: 0 5px;
+
+  background: #ff4d5a;
+
+  color: white;
+
+  border: 2px solid white;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   NOTIFICATION PANEL
+   ========================================================= */
+
+.notification-panel {
+  position: absolute;
+
+  top: 55px;
+
+  right: 0;
+
+  width: 380px;
+
+  max-width: calc(100vw - 30px);
+
+  background: #ffffff;
+
+  border: 1px solid #dce7f0;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 18px 50px rgba(20, 55, 80, 0.15);
+
+  overflow: hidden;
+
+  z-index: 1000;
+}
+
+
+/* =========================================================
+   PANEL HEADER
+   ========================================================= */
+
+.notification-panel-header {
+  min-height: 68px;
+
+  padding: 15px 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-bottom: 1px solid #edf2f6;
+}
+
+.notification-panel-header h3 {
+  margin: 0;
+
+  color: #163b5d;
+
+  font-size: 16px;
+
+  font-weight: 800;
+}
+
+.notification-panel-header span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #8a9cac;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   NOTIFICATION CLOSE
+   ========================================================= */
+
+.notification-close {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  background: #f2f6f9;
+
+  color: #657d91;
+
+  font-size: 20px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.notification-close:hover {
+  background: #e8f0f5;
+
+  color: #163b5d;
+}
+
+
+/* =========================================================
+   MARK ALL
+   ========================================================= */
+
+.mark-all-button {
+  width: 100%;
+
+  padding: 10px 17px;
+
+  border: 0;
+
+  border-bottom: 1px solid #edf2f6;
+
+  background: #f8fbfd;
+
+  color: #087fd0;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-align: right;
+
+  cursor: pointer;
+}
+
+.mark-all-button:hover {
+  background: #eef8fc;
+}
+
+
+/* =========================================================
+   NOTIFICATION LIST
+   ========================================================= */
+
+.notification-list {
+  max-height: 390px;
+
+  overflow-y: auto;
+}
+
+.notification-item {
+  display: flex;
+
+  gap: 12px;
+
+  padding: 14px 16px;
+
+  border-bottom: 1px solid #edf2f6;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  min-width: 0;
+}
+
+.notification-item:last-child {
+  border-bottom: 0;
+}
+
+.notification-item:hover {
+  background: #f7fbfd;
+}
+
+
+/* =========================================================
+   UNREAD
+   ========================================================= */
+
+.notification-unread {
+  background: #f4fbfe;
+}
+
+.notification-unread:hover {
+  background: #edf8fc;
+}
+
+
+/* =========================================================
+   READ
+   ========================================================= */
+
+.notification-read {
+  background: #ffffff;
+}
+
+.notification-read .notification-content strong {
+  color: #60778a;
+}
+
+
+/* =========================================================
+   NOTIFICATION ICON
+   ========================================================= */
+
+.notification-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: #edf7fb;
+
+  color: #087fd0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   NOTIFICATION CONTENT
+   ========================================================= */
+
+.notification-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.notification-title-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.notification-title-row strong {
+  color: #163b5d;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.notification-content p {
+  margin: 5px 0;
+
+  color: #63798a;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.notification-content small {
+  color: #9aaab7;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   UNREAD DOT
+   ========================================================= */
+
+.notification-unread-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  background: #087fd0;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   EMPTY NOTIFICATIONS
+   ========================================================= */
+
+.notification-empty {
+  min-height: 190px;
+
+  padding: 30px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.notification-empty-icon {
+  width: 50px;
+  height: 50px;
+
+  margin-bottom: 12px;
+
+  border-radius: 50%;
+
+  background: #f1f7fa;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 22px;
+}
+
+.notification-empty strong {
+  color: #35556e;
+
+  font-size: 13px;
+}
+
+.notification-empty span {
+  max-width: 230px;
+
+  margin-top: 5px;
+
+  color: #94a4b1;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   NOTIFICATION MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .dashboard-header {
+    align-items: flex-start;
+  }
+
+  .notification-panel {
+    position: fixed;
+
+    top: 75px;
+
+    right: 15px;
+
+    left: 15px;
+
+    width: auto;
+
+    max-width: none;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .notification-button {
+    width: 40px;
+
+    height: 40px;
+  }
+
+  .notification-button svg {
+    width: 19px;
+
+    height: 19px;
+  }
+
+  .notification-panel {
+    top: 70px;
+  }
+
+  .notification-item {
+    padding: 12px;
+  }
+
+  .notification-icon {
+    width: 34px;
+
+    height: 34px;
+  }
+
+}

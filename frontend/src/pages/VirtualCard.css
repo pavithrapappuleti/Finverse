@@ -1,0 +1,1860 @@
+/* =========================================
+   VIRTUAL CARD PAGE
+========================================= */
+
+.virtual-card-topbar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 10px;
+  padding: 20px 0px 0px 20px;
+}
+
+.virtual-card-topbar h1 {
+  margin: 0;
+  color: #241b52;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.virtual-card-topbar p {
+  margin: 6px 0 0;
+  color: #77728d;
+  font-size: 14px;
+}
+.virtual-card-menu-button {
+  display: none;
+  border: none;
+  background: #241b52;
+  color: white;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.virtual-card-page {
+  width: 100%;
+  padding: 35px 40px 50px 30px;
+ 
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.virtual-card-section,
+.card-controls-section {
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid rgba(36, 27, 82, 0.08);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  margin-bottom: 25px;
+
+  box-shadow:
+    0 4px 10px rgba(36, 27, 82, 0.04),
+    0 15px 35px rgba(36, 27, 82, 0.08);
+
+  backdrop-filter: blur(8px);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #eeeaf7;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #241b52;
+
+  font-size: 21px;
+
+  font-weight: 700;
+}
+
+.section-heading p {
+  margin: 6px 0 0;
+
+  color: #858095;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   STATUS BADGE
+========================================= */
+
+.card-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-status-badge.active {
+  background: #eaf8ef;
+  color: #21894d;
+}
+
+.card-status-badge.frozen {
+  background: #fff0f0;
+  color: #d34c4c;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+
+/* =========================================
+   3D CARD
+========================================= */
+
+.card-scene {
+  width: 520px;
+  max-width: 100%;
+  height: 315px;
+  margin: 15px auto 0;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.card-scene.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+
+/* =========================================
+   CARD BASE
+========================================= */
+
+.virtual-bank-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #171222 0%,
+      #241b52 38%,
+      #392b76 68%,
+      #171222 100%
+    );
+
+  box-shadow:
+    0 20px 45px rgba(20, 15, 45, 0.30),
+    inset 0 1px 1px rgba(255, 255, 255, 0.20);
+}
+
+.virtual-bank-card::before {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  top: -210px;
+  right: -100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.virtual-bank-card::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  bottom: -180px;
+  left: -80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================
+   CARD FRONT
+========================================= */
+
+.card-front {
+  padding: 30px;
+}
+
+.card-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-brand {
+  color: white;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.contactless-icon {
+  color: white;
+  font-size: 23px;
+  transform: rotate(90deg);
+  letter-spacing: -7px;
+}
+
+
+/* =========================================
+   CHIP
+========================================= */
+
+.card-chip {
+  position: absolute;
+  z-index: 2;
+
+  top: 100px;
+  left: 30px;
+
+  width: 52px;
+  height: 39px;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d9c67a,
+      #f4e6a8,
+      #b99f48
+    );
+
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.6),
+    0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chip-line {
+  position: absolute;
+  border: 1px solid rgba(90, 70, 25, 0.55);
+}
+
+.chip-line-1 {
+  width: 100%;
+  height: 15px;
+  top: 11px;
+  left: 0;
+  border-left: none;
+  border-right: none;
+}
+
+.chip-line-2 {
+  width: 14px;
+  height: 100%;
+  left: 18px;
+  top: 0;
+  border-top: none;
+  border-bottom: none;
+}
+
+.chip-line-3 {
+  width: 14px;
+  height: 100%;
+  right: 8px;
+  top: 0;
+  border-top: none;
+  border-bottom: none;
+}
+
+
+/* =========================================
+   CARD NUMBER
+========================================= */
+
+.card-number {
+  position: absolute;
+  z-index: 2;
+
+  left: 30px;
+  bottom: 105px;
+
+  color: white;
+
+  font-size: 23px;
+  font-weight: 500;
+
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================
+   CARD BOTTOM
+========================================= */
+
+.card-bottom {
+  position: absolute;
+  z-index: 2;
+
+  left: 30px;
+  right: 30px;
+  bottom: 27px;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+}
+
+.card-holder,
+.card-expiry {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-holder span,
+.card-expiry span {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+
+.card-holder strong,
+.card-expiry strong {
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.card-network {
+  margin-left: auto;
+
+  color: white;
+  font-size: 21px;
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+/* =========================================
+   FROZEN CARD
+========================================= */
+
+.card-is-frozen {
+  filter: grayscale(0.55);
+}
+
+.frozen-overlay {
+  position: absolute;
+  z-index: 10;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+
+  background: rgba(20, 15, 35, 0.62);
+
+  color: white;
+
+  letter-spacing: 2px;
+}
+
+.frozen-overlay span {
+  font-size: 28px;
+}
+
+.frozen-overlay strong {
+  font-size: 14px;
+}
+
+
+/* =========================================
+   CARD BACK
+========================================= */
+
+.card-back {
+  transform: rotateY(180deg);
+  padding-top: 25px;
+}
+
+.back-brand {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+
+  color: white;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.magnetic-strip {
+  position: absolute;
+
+  top: 67px;
+  left: 0;
+  right: 0;
+
+  height: 52px;
+
+  background: #101010;
+}
+
+.signature-area {
+  position: absolute;
+
+  top: 137px;
+  left: 30px;
+  right: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.signature-line {
+  flex: 1;
+
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 12px;
+
+  box-sizing: border-box;
+
+  background: #e6e6e6;
+
+  color: #777;
+
+  font-size: 9px;
+
+  font-style: italic;
+}
+
+.cvv-box {
+  width: 70px;
+  height: 34px;
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  border-radius: 3px;
+}
+
+.cvv-box span {
+  font-size: 7px;
+  color: #888;
+}
+
+.cvv-box strong {
+  color: #222;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.back-info {
+  position: absolute;
+
+  left: 30px;
+  right: 30px;
+  top: 190px;
+}
+
+.back-info p {
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 8px;
+
+  line-height: 1.5;
+
+  margin: 0 0 6px;
+}
+
+.back-footer {
+  position: absolute;
+
+  bottom: 20px;
+  left: 30px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 8px;
+
+  letter-spacing: 1.2px;
+}
+
+
+/* =========================================
+   FLIP HINT
+========================================= */
+
+.flip-hint {
+  text-align: center;
+
+  margin: 15px 0 20px;
+
+  color: #999;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   CARD ACTIONS
+========================================= */
+
+.card-actions {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  padding-top: 5px;
+}
+
+.card-action-btn {
+  border: 1px solid #e1ddef;
+
+  background: #faf9fd;
+
+  color: #241b52;
+
+  padding: 11px 17px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  transition: all 0.25s ease;
+
+  box-shadow:
+    0 3px 8px rgba(36, 27, 82, 0.04);
+}
+
+.card-action-btn:hover {
+  background: #f1eefb;
+
+  border-color: #cfc7e8;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 15px rgba(36, 27, 82, 0.10);
+}
+.card-action-btn:hover {
+  background: #f5f2ff;
+  border-color: #241b52;
+  transform: translateY(-1px);
+}
+
+.freeze-button {
+  color: #c84848;
+}
+
+.freeze-button.unfreeze {
+  color: #258653;
+}
+
+
+/* =========================================
+   CONTROL CARDS
+========================================= */
+
+.control-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #faf9fd
+    );
+
+  border: 1px solid #ebe8f4;
+
+  border-radius: 14px;
+
+  margin-bottom: 14px;
+
+  box-shadow:
+    0 4px 12px rgba(36, 27, 82, 0.045);
+
+  transition: all 0.25s ease;
+}
+
+.control-card:hover {
+  border-color: #d8d1eb;
+
+  box-shadow:
+    0 8px 20px rgba(36, 27, 82, 0.08);
+
+  transform: translateY(-1px);
+}
+.control-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eeeaff,
+      #f7f5ff
+    );
+
+  border: 1px solid #e3ddf4;
+
+  font-size: 21px;
+
+  box-shadow:
+    0 5px 12px rgba(36, 27, 82, 0.06);
+}
+
+.control-content {
+  flex: 1;
+}
+
+.control-content h3 {
+  margin: 0;
+
+  color: #333;
+
+  font-size: 14px;
+}
+
+.control-content p {
+  margin: 5px 0 0;
+
+  color: #888;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   CONTROL STATUS
+========================================= */
+
+.control-status {
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.status-active {
+  background: #eaf8ef;
+  color: #21894d;
+}
+
+.status-frozen {
+  background: #fff0f0;
+  color: #d34c4c;
+}
+
+
+/* =========================================
+   SPENDING LIMIT
+========================================= */
+
+.limit-display {
+  display: inline-flex;
+
+  align-items: baseline;
+
+  gap: 7px;
+
+  margin-top: 11px;
+
+  padding: 7px 12px;
+
+  background: #f3f0fc;
+
+  border-radius: 8px;
+
+  border: 1px solid #e5e0f2;
+}
+
+.limit-display strong {
+  color: #241b52;
+
+  font-size: 18px;
+}
+
+.limit-display span {
+  color: #888;
+
+  font-size: 10px;
+}
+.change-limit-btn {
+  border: none;
+
+  background: #f1effb;
+
+  color: #241b52;
+
+  padding: 9px 13px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.change-limit-btn:hover {
+  background: #e7e3f8;
+}
+
+
+/* =========================================
+   LIMIT EDIT
+========================================= */
+
+.limit-edit-box {
+  background: #f9f8fd;
+
+  border: 1px solid #e9e6f4;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  margin-bottom: 13px;
+}
+
+.limit-edit-box label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #555;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.limit-input-row {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.limit-input-row > span {
+  color: #555;
+  font-weight: 600;
+}
+
+.limit-input-row input {
+  width: 150px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  padding: 9px 10px;
+
+  outline: none;
+
+  font-size: 12px;
+}
+
+.limit-input-row input:focus {
+  border-color: #241b52;
+}
+
+.limit-input-row button {
+  border: none;
+
+  background: #241b52;
+
+  color: white;
+
+  padding: 9px 14px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.limit-input-row .cancel-limit-btn {
+  background: #eee;
+
+  color: #555;
+}
+
+
+/* =========================================
+   TOGGLE
+========================================= */
+
+.toggle-switch {
+  width: 42px;
+  height: 23px;
+
+  border-radius: 20px;
+
+  background: #ddd;
+
+  padding: 3px;
+
+  box-sizing: border-box;
+}
+
+.toggle-switch span {
+  display: block;
+
+  width: 17px;
+  height: 17px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  transition: 0.25s;
+}
+
+.active-toggle {
+  background: #241b52;
+}
+
+.active-toggle span {
+  margin-left: 19px;
+}
+
+
+/* =========================================
+   SECURITY INFORMATION
+========================================= */
+
+.card-info-box {
+  display: flex;
+
+  gap: 13px;
+
+  padding: 19px;
+
+  margin-top: 22px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5f2ff,
+      #faf9ff
+    );
+
+  border: 1px solid #e3ddf2;
+
+  box-shadow:
+    0 5px 15px rgba(36, 27, 82, 0.05);
+}
+
+.info-icon {
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  border-radius: 9px;
+
+  box-shadow:
+    0 3px 8px rgba(36, 27, 82, 0.08);
+
+  font-size: 17px;
+}
+
+.card-info-box h3 {
+  margin: 0;
+
+  color: #241b52;
+
+  font-size: 13px;
+}
+
+.card-info-box p {
+  margin: 5px 0 0;
+
+  color: #777;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .virtual-card-menu-button {
+    display: block;
+  }
+
+  .dashboard-main {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 85% 5%,
+      rgba(110, 88, 190, 0.10),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 70%,
+      rgba(110, 88, 190, 0.06),
+      transparent 25%
+    ),
+    #f5f4fa;
+}
+
+}
+
+
+@media (max-width: 600px) {
+
+  .virtual-card-topbar h1 {
+    font-size: 21px;
+  }
+
+  .virtual-card-topbar p {
+    font-size: 12px;
+  }
+
+  .virtual-card-section,
+  .card-controls-section {
+    padding: 18px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .section-heading h2 {
+    font-size: 18px;
+  }
+
+  .card-scene {
+    height: 220px;
+  }
+
+  .card-front {
+    padding: 20px;
+  }
+
+  .card-brand {
+    font-size: 15px;
+  }
+
+  .contactless-icon {
+    font-size: 18px;
+  }
+
+  .card-chip {
+    top: 72px;
+    left: 20px;
+
+    width: 42px;
+    height: 32px;
+  }
+
+  .card-number {
+    left: 20px;
+    bottom: 78px;
+
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .card-bottom {
+    left: 20px;
+    right: 20px;
+    bottom: 18px;
+
+    gap: 14px;
+  }
+
+  .card-holder strong,
+  .card-expiry strong {
+    font-size: 9px;
+  }
+
+  .card-network {
+    font-size: 15px;
+  }
+
+  .card-back {
+    padding-top: 20px;
+  }
+
+  .back-brand {
+    top: 15px;
+    right: 20px;
+    font-size: 13px;
+  }
+
+  .magnetic-strip {
+    top: 50px;
+    height: 40px;
+  }
+
+  .signature-area {
+    top: 105px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .back-info {
+    top: 145px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .back-info p {
+    font-size: 6px;
+  }
+
+  .back-footer {
+    bottom: 13px;
+    left: 20px;
+    font-size: 6px;
+  }
+
+  .control-card {
+    align-items: flex-start;
+  }
+
+  .control-status {
+    margin-left: auto;
+  }
+
+  .change-limit-btn {
+    margin-left: auto;
+  }
+
+  .limit-input-row {
+    flex-wrap: wrap;
+  }
+
+}
+.virtual-card-section {
+  overflow: hidden;
+}
+
+.virtual-card-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 8px;
+
+  background: linear-gradient(
+    360deg,
+    #241b52,
+    #6652a5,
+    #9b8acb
+  );
+}
+.card-scene {
+  width: 520px;
+  max-width: 100%;
+  height: 315px;
+
+  margin: 25px auto 0;
+
+  perspective: 1200px;
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+.card-scene::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 180px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: rgba(91, 72, 155, 0.12);
+
+  filter: blur(45px);
+
+  border-radius: 50%;
+
+  z-index: -1;
+}
+.cards-page-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: start;
+}
+
+.virtual-card-section,
+.card-controls-section {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+@media (max-width: 1100px) {
+  .cards-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.card-controls-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 8px;
+
+  background: linear-gradient(
+    360deg,
+    #241b52,
+    #6652a5,
+    #9b8acb
+  );
+}
+/* ==============================
+   MAKE PAYMENT
+============================== */
+
+.make-payment-btn {
+  width: 100%;
+  padding: 13px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background: #241b52;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.make-payment-btn:hover {
+  opacity: 0.9;
+}
+
+
+/* ==============================
+   PAYMENT BOX
+============================== */
+
+.payment-box {
+  width: 100%;
+  margin-top: 20px;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+
+/* ==============================
+   PAYMENT HEADER
+============================== */
+
+.payment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.payment-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #241b52;
+}
+
+.close-payment-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #f1f1f1;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+
+/* ==============================
+   PAYMENT FORM
+============================== */
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.payment-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.payment-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.payment-field input {
+  width: 100%;
+  height: 45px;
+  padding: 0 12px;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+}
+
+.payment-field input:focus {
+  border-color: #241b52;
+}
+
+
+/* ==============================
+   AMOUNT INPUT
+============================== */
+
+.amount-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  height: 45px;
+  padding-left: 12px;
+  box-sizing: border-box;
+}
+
+.amount-input span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+}
+
+.amount-input input {
+  border: none;
+  height: 100%;
+  flex: 1;
+}
+
+.amount-input input:focus {
+  outline: none;
+}
+
+
+/* ==============================
+   PAYMENT INFORMATION
+============================== */
+
+.payment-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 15px;
+  background: #f7f7fa;
+  border-radius: 10px;
+}
+
+.payment-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.payment-info span {
+  font-size: 12px;
+  color: #777;
+}
+
+.payment-info strong {
+  font-size: 14px;
+  color: #241b52;
+}
+
+
+/* ==============================
+   PAY NOW
+============================== */
+
+.confirm-payment-btn {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background: #241b52;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirm-payment-btn:hover {
+  opacity: 0.9;
+}
+
+.confirm-payment-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 600px) {
+
+  .payment-info {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-box {
+    padding: 16px;
+  }
+
+}
+/* =========================================
+   PAYMENT CARD PREVIEW
+========================================= */
+
+.payment-card-preview {
+  margin-bottom: 20px;
+}
+
+.payment-card-preview-header {
+  margin-bottom: 8px;
+}
+
+.payment-card-preview-header span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.payment-card-mini {
+  width: 100%;
+  min-height: 145px;
+  padding: 18px 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #241b52, #40327d);
+  color: white;
+  box-shadow: 0 8px 20px rgba(36, 27, 82, 0.18);
+}
+
+.payment-card-brand {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.payment-card-number {
+  margin-top: 22px;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+.payment-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.payment-card-bottom div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.payment-card-bottom span {
+  font-size: 8px;
+  opacity: 0.7;
+  letter-spacing: 0.5px;
+}
+
+.payment-card-bottom strong {
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   PAYMENT PIN
+========================================= */
+
+.payment-pin-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.payment-pin-wrapper input {
+  width: 100%;
+  padding-right: 70px;
+  box-sizing: border-box;
+}
+
+.payment-pin-toggle {
+  position: absolute;
+  right: 10px;
+  border: none;
+  background: transparent;
+  color: #241b52;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+
+.payment-pin-toggle:hover {
+  text-decoration: underline;
+}
+
+.payment-field small {
+  display: block;
+  margin-top: 6px;
+  color: #777;
+  font-size: 12px;
+}
+/* =========================================
+   PAYMENT RESULT CARD
+========================================= */
+
+.payment-result-card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 35px 30px;
+  text-align: center;
+}
+
+
+/* SUCCESS ICON */
+
+.payment-success-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #dcfce7;
+  color: #16a34a;
+
+  font-size: 38px;
+  font-weight: 700;
+
+  border: 3px solid #86efac;
+}
+
+
+/* TITLE */
+
+.payment-result-card h2 {
+  margin: 0;
+
+  font-size: 26px;
+  font-weight: 700;
+
+  color: #163b68;
+}
+
+
+.payment-result-message {
+  margin: 8px 0 25px;
+
+  font-size: 14px;
+
+  color: #64748b;
+}
+
+
+/* =========================================
+   PAYMENT DETAILS
+========================================= */
+
+.payment-result-details {
+  width: 100%;
+
+  border: 1px solid #dbe7f5;
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  background: #f8fbff;
+}
+
+
+.payment-result-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 15px 18px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  text-align: left;
+}
+
+
+.payment-result-row:last-child {
+  border-bottom: none;
+}
+
+
+.payment-result-row span {
+  font-size: 14px;
+
+  color: #64748b;
+}
+
+
+.payment-result-row strong {
+  font-size: 14px;
+
+  color: #163b68;
+
+  text-align: right;
+
+  word-break: break-word;
+}
+
+
+.payment-result-amount {
+  font-size: 17px !important;
+
+  color: #dc2626 !important;
+}
+
+
+.payment-success-status {
+  color: #16a34a !important;
+}
+
+
+/* =========================================
+   REMAINING BALANCE
+========================================= */
+
+.payment-remaining-balance {
+  margin-top: 20px;
+
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background: #eff6ff;
+
+  border: 1px solid #bfdbfe;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.payment-remaining-balance span {
+  font-size: 14px;
+
+  color: #64748b;
+}
+
+
+.payment-remaining-balance strong {
+  font-size: 20px;
+
+  color: #163b68;
+}
+
+
+/* =========================================
+   DONE BUTTON
+========================================= */
+
+.payment-result-done-btn {
+  width: 100%;
+
+  margin-top: 22px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #0ea5e9,
+    #2563eb
+  );
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.payment-result-done-btn:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .payment-result-card {
+    padding: 25px 18px;
+  }
+
+
+  .payment-result-card h2 {
+    font-size: 22px;
+  }
+
+
+  .payment-result-row {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+  }
+
+
+  .payment-result-row strong {
+    text-align: left;
+  }
+
+
+  .payment-remaining-balance {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+/* =========================================
+   PRINT / SAVE RECEIPT BUTTON
+========================================= */
+
+.payment-result-print-btn {
+  width: 100%;
+  padding: 13px 20px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #e8f4ff;
+  color: #0ea5e9;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.payment-result-print-btn:hover {
+  background: #d8edff;
+}
+
+
+/* =========================================
+   PRINT RECEIPT
+========================================= */
+
+@media print {
+
+  body * {
+    visibility: hidden;
+  }
+
+  .payment-result-card,
+  .payment-result-card * {
+    visibility: visible;
+  }
+
+  .payment-result-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    background: white;
+    box-shadow: none;
+    border: none;
+  }
+
+  .payment-result-print-btn,
+  .payment-result-done-btn {
+    display: none !important;
+  }
+
+  .payment-box {
+    position: static;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: white;
+    box-shadow: none;
+    border: none;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+}

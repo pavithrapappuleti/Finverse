@@ -1,0 +1,274 @@
+.reset-pin-page {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #eef7ff,
+        #f8fbff
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    font-family: "Poppins", sans-serif;
+}
+
+
+.reset-pin-card {
+    width: 100%;
+    max-width: 480px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 38px;
+
+    box-shadow:
+        0 15px 45px rgba(10, 45, 90, 0.12);
+
+    border: 1px solid #e5eff8;
+}
+
+
+.reset-pin-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #00c6ff,
+        #006eff
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 110, 255, 0.2);
+}
+
+
+.reset-pin-card h1 {
+    text-align: center;
+
+    margin: 0;
+
+    color: #09264d;
+
+    font-size: 28px;
+}
+
+
+.reset-description {
+    text-align: center;
+
+    color: #718096;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin: 10px 0 28px;
+}
+
+
+.reset-field {
+    margin-bottom: 20px;
+}
+
+
+.reset-field label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #183b63;
+
+    margin-bottom: 8px;
+}
+
+
+.input-wrapper {
+    position: relative;
+}
+
+
+.input-wrapper input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 48px 13px 15px;
+
+    border: 1px solid #d7e4f0;
+
+    border-radius: 10px;
+
+    background: #f9fcff;
+
+    color: #102f52;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+
+.input-wrapper input:focus {
+    border-color: #008cff;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 140, 255, 0.1);
+}
+
+
+.eye-button {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+
+.reset-pin-button {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #00c6ff,
+        #006eff
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.reset-pin-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 110, 255, 0.22);
+}
+
+
+.reset-pin-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+.reset-message {
+    padding: 12px 14px;
+
+    border-radius: 9px;
+
+    margin-bottom: 20px;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+.reset-message.error {
+    background: #fff1f1;
+
+    color: #c62828;
+
+    border: 1px solid #ffd1d1;
+}
+
+
+.reset-message.success {
+    background: #effff5;
+
+    color: #16834d;
+
+    border: 1px solid #c9f2da;
+}
+
+
+.back-link {
+    display: block;
+
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #0078d7;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+
+    .reset-pin-page {
+        padding: 20px 15px;
+    }
+
+    .reset-pin-card {
+        padding: 28px 22px;
+
+        border-radius: 18px;
+    }
+
+    .reset-pin-card h1 {
+        font-size: 24px;
+    }
+
+}

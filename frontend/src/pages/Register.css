@@ -1,0 +1,421 @@
+.register-page {
+  min-height: 100vh;
+  background:transparent;
+    
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 20px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.register-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none;
+}
+
+.register-glow-one {
+  width: 320px;
+  height: 320px;
+  background: rgba(0, 200, 255, 0.08);
+  top: -120px;
+  left: -100px;
+}
+
+.register-glow-two {
+  width: 320px;
+  height: 320px;
+  background: rgba(255, 180, 0, 0.06);
+  bottom: -120px;
+  right: -100px;
+}
+
+/* Container */
+
+.register-container {
+  width: 100%;
+  max-width: 850px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo */
+
+.register-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.register-logo img {
+  width: 145px;
+  height: 85px;
+  object-fit: contain;
+}
+
+/* Heading */
+
+.register-heading {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.register-heading h1 {
+  font-size: 36px;
+  margin: 0;
+  letter-spacing: -1px;
+  color:dodgerblue;
+}
+
+.register-heading p {
+  color: darkmagenta;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+/* Card */
+
+.register-card {
+  background: rgba(8, 24, 48, 0.84);
+  border: 1px solid rgba(120, 170, 210, 0.18);
+  border-radius: 20px;
+
+  padding: 32px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(18px);
+}
+
+/* Two columns */
+
+.register-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* Input group */
+
+.register-input-group {
+  margin-bottom: 18px;
+}
+
+.register-input-group label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #dce8f5;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Input wrapper */
+
+.register-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Inputs */
+
+.register-input-wrapper input,
+.register-input-wrapper textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(130, 170, 205, 0.2);
+
+  background: black;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  outline: none;
+
+  transition: 0.25s ease;
+}
+
+.register-input-wrapper input {
+  height: 50px;
+  padding: 0 42px;
+}
+
+.register-input-wrapper textarea {
+  min-height: 75px;
+  padding: 15px 42px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.register-input-wrapper input::placeholder,
+.register-input-wrapper textarea::placeholder {
+  color: white;
+}
+
+.register-input-wrapper input:focus,
+.register-input-wrapper textarea:focus {
+  border-color: #00cfff;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 207, 255, 0.08);
+}
+
+/* Icons */
+
+.register-input-icon {
+  position: absolute;
+  left: 15px;
+  z-index: 2;
+
+  font-size: 14px;
+
+  color: #00cfff;
+
+  pointer-events: none;
+}
+
+.address-icon {
+  top: 15px;
+}
+
+/* Password button */
+
+.register-password-toggle {
+  position: absolute;
+  right: 12px;
+
+  border: none;
+  background: transparent;
+
+  color: #7e94ad;
+
+  cursor: pointer;
+
+  font-size: 15px;
+}
+
+.register-password-toggle:hover {
+  color: #00cfff;
+}
+
+/* Terms */
+
+.register-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  margin: 8px 0 22px;
+
+  color: #8fa2b9;
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  cursor: pointer;
+}
+
+.register-terms input {
+  margin-top: 3px;
+  accent-color: #00cfff;
+}
+
+/* Register button */
+
+.register-submit {
+  width: 100%;
+  height: 52px;
+
+  border: none;
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00cfff,
+      #168df5
+    );
+
+  color: #00101d;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  transition: 0.25s ease;
+}
+
+.register-submit:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 190, 255, 0.25);
+}
+
+.register-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Login */
+
+.already-account {
+  text-align: center;
+
+  margin-top: 22px;
+
+  color: #879ab2;
+
+  font-size: 14px;
+}
+
+.already-account button {
+  border: none;
+  background: transparent;
+
+  color: #00cfff;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin-left: 5px;
+}
+
+.already-account button:hover {
+  text-decoration: underline;
+}
+
+/* Security */
+
+.register-security {
+  text-align: center;
+
+  margin-top: 18px;
+
+  color: black;
+
+  font-size: 18px;
+}
+
+/* Tablet */
+
+@media (max-width: 750px) {
+
+  .register-container {
+    max-width: 600px;
+  }
+
+  .register-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .register-page {
+    padding: 25px 15px;
+  }
+
+  .register-logo img {
+    width: 125px;
+    height: 75px;
+  }
+
+  .register-heading h1 {
+    font-size: 30px;
+  }
+
+  .register-heading p {
+    font-size: 13px;
+  }
+
+  .register-card {
+    padding: 23px 18px;
+    border-radius: 16px;
+  }
+
+  .register-input-group {
+    margin-bottom: 16px;
+  }
+
+  .register-input-wrapper input {
+    height: 48px;
+  }
+
+  .register-security {
+    font-size: 10px;
+    padding: 0 15px;
+  }
+}
+/* =========================================
+   ACCOUNT TYPE SELECT
+   ========================================= */
+
+.register-input-group select {
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+
+  padding: 0 42px 0 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(130, 170, 205, 0.2);
+
+  background: black;
+
+  color: white;
+
+  font-size: 13px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+
+  appearance: auto;
+}
+
+.register-input-group select:focus {
+  border-color: #00cfff;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 207, 255, 0.08);
+}
+
+.register-input-group select:hover {
+  border-color: rgba(0, 207, 255, 0.5);
+}
+
+.register-input-group select option {
+  background: #06182d;
+
+  color: white;
+
+  font-size: 13px;
+}

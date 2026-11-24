@@ -1,0 +1,897 @@
+
+/* =====================================================
+   FINVERSE DEPOSIT PAGE
+   USES COMMON DASHBOARD SIDEBAR
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+   SIDEBAR SPACING IS HANDLED BY Dashboard.css
+===================================================== */
+
+.deposit-main {
+  min-height: 100vh;
+
+  padding: 28px 36px 30px;
+
+  overflow-x: hidden;
+
+  background: #f4f8fc;
+
+  font-family: Arial, sans-serif;
+
+  color: #08284b;
+
+  min-width: 0;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.deposit-page-header {
+  margin-bottom: 27px;
+
+  min-width: 0;
+}
+
+.deposit-label {
+  margin: 0 0 4px;
+
+  color: #079bd3;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.deposit-page-header h1 {
+  margin: 0;
+
+  font-size: 32px;
+
+  line-height: 1.2;
+
+  color: #092b50;
+
+  font-weight: 700;
+}
+
+.deposit-subtitle {
+  margin: 8px 0 0;
+
+  color: #7690aa;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   MAIN CONTENT GRID
+===================================================== */
+
+.deposit-content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(0, 0.92fr);
+
+  gap: 24px;
+
+  align-items: stretch;
+
+  width: 100%;
+
+  min-width: 0;
+}
+
+
+/* =====================================================
+   LEFT FORM CARD
+===================================================== */
+
+.deposit-form-card {
+  width: 100%;
+
+  min-width: 0;
+
+  background: white;
+
+  border: 1px solid #e1eaf2;
+
+  border-radius: 20px;
+
+  padding: 32px;
+
+  min-height: 490px;
+
+  box-shadow:
+    0 10px 30px rgba(21, 69, 108, 0.07);
+}
+
+
+/* =====================================================
+   DEPOSIT ICON
+===================================================== */
+
+.deposit-icon-box {
+  width: 54px;
+
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #e9f5ff;
+
+  border-radius: 15px;
+
+  font-size: 25px;
+
+  margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   SMALL HEADING
+===================================================== */
+
+.deposit-small-title {
+  margin: 0 0 7px;
+
+  color: #087ee6;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.deposit-form-card h2 {
+  margin: 0;
+
+  color: #092b50;
+
+  font-size: 25px;
+
+  font-weight: 700;
+}
+
+.deposit-description {
+  margin: 7px 0 22px;
+
+  color: #738aa4;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   INPUT GROUP
+===================================================== */
+
+.deposit-input-group {
+  width: 100%;
+
+  min-width: 0;
+
+  margin-bottom: 17px;
+}
+
+.deposit-input-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #102d4b;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   INPUT WRAPPER
+===================================================== */
+
+.deposit-input-wrapper {
+  width: 100%;
+
+  min-width: 0;
+
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #d9e5f0;
+
+  border-radius: 11px;
+
+  background: #f8fbfe;
+
+  transition: 0.2s ease;
+
+  overflow: hidden;
+}
+
+.deposit-input-wrapper:focus-within {
+  border-color: #13a8df;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 3px rgba(19, 168, 223, 0.08);
+}
+
+
+/* =====================================================
+   INPUT ICON
+===================================================== */
+
+.input-icon {
+  width: 50px;
+
+  min-width: 50px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 17px;
+
+  color: #45647f;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.deposit-input-wrapper input {
+  flex: 1;
+
+  min-width: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #163b5f;
+
+  font-size: 15px;
+}
+
+.deposit-input-wrapper input::placeholder {
+  color: #91a5ba;
+}
+
+
+/* =====================================================
+   PIN TOGGLE
+===================================================== */
+
+.pin-toggle {
+  width: 45px;
+
+  min-width: 45px;
+
+  height: 100%;
+
+  border: none;
+
+  background: transparent;
+
+  color: #496780;
+
+  cursor: pointer;
+
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   FORGOT PIN
+===================================================== */
+
+.forgot-pin-link {
+  display: inline-block;
+
+  margin-top: -5px;
+
+  margin-bottom: 17px;
+
+  color: #087fd0;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.forgot-pin-link:hover {
+  color: #066eb7;
+
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.deposit-submit-button {
+  width: 100%;
+
+  height: 51px;
+
+  margin-top: 3px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: linear-gradient(
+    90deg,
+    #08bcd2,
+    #087fdf
+  );
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.deposit-submit-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(8, 148, 220, 0.25);
+}
+
+.deposit-submit-button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =====================================================
+   SUCCESS / ERROR
+===================================================== */
+
+.deposit-error,
+.deposit-success {
+  width: 100%;
+
+  padding: 9px 12px;
+
+  border-radius: 8px;
+
+  margin-bottom: 12px;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+.deposit-error {
+  background: #fff1f1;
+
+  color: #d33b3b;
+
+  border: 1px solid #ffd5d5;
+}
+
+.deposit-success {
+  background: #edfff6;
+
+  color: #16834e;
+
+  border: 1px solid #c8f1dc;
+}
+
+
+/* =====================================================
+   SECURITY MESSAGE
+===================================================== */
+
+.deposit-security {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 17px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid #edf1f5;
+
+  min-width: 0;
+}
+
+.deposit-security span {
+  flex-shrink: 0;
+
+  font-size: 17px;
+}
+
+.deposit-security p {
+  margin: 0;
+
+  color: #7790a8;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   RIGHT PREVIEW
+===================================================== */
+
+.deposit-preview-card {
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 490px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    145deg,
+    #087cf0,
+    #1554b4
+  );
+
+  color: white;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 35px rgba(13, 79, 159, 0.22);
+}
+
+
+/* =====================================================
+   PREVIEW ICON
+===================================================== */
+
+.preview-icon {
+  width: 62px;
+
+  height: 62px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 17px;
+
+  background: rgba(255, 255, 255, 0.14);
+
+  font-size: 29px;
+
+  margin-bottom: 23px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   PREVIEW TITLE
+===================================================== */
+
+.preview-title {
+  margin: 0 0 12px;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   PREVIEW AMOUNT
+===================================================== */
+
+.preview-amount {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  max-width: 100%;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.preview-amount span {
+  font-size: 35px;
+
+  font-weight: 700;
+
+  flex-shrink: 0;
+}
+
+.preview-amount strong {
+  max-width: 300px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-size: 28px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   PREVIEW TEXT
+===================================================== */
+
+.preview-text {
+  max-width: 400px;
+
+  margin: 25px 30px 0;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   DECORATIVE CIRCLE
+===================================================== */
+
+.preview-circle {
+  position: absolute;
+
+  width: 270px;
+
+  height: 270px;
+
+  right: -100px;
+
+  bottom: -120px;
+
+  border-radius: 50%;
+
+  border: 35px solid rgba(
+    255,
+    255,
+    255,
+    0.07
+  );
+}
+
+
+/* =====================================================
+   INFORMATION CARDS
+===================================================== */
+
+.deposit-info-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+
+  margin-top: 20px;
+
+  width: 100%;
+
+  min-width: 0;
+}
+
+.deposit-info-card {
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 90px;
+
+  background: white;
+
+  border: 1px solid #e0e9f1;
+
+  border-radius: 15px;
+
+  padding: 16px 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  box-shadow:
+    0 5px 18px rgba(21, 69, 108, 0.04);
+}
+
+
+/* =====================================================
+   INFORMATION ICONS
+===================================================== */
+
+.info-icon {
+  min-width: 46px;
+
+  height: 46px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 12px;
+
+  font-size: 20px;
+}
+
+.info-icon.green {
+  background: #e8f9f2;
+}
+
+.info-icon.blue {
+  background: #e7f7ff;
+}
+
+.info-icon.yellow {
+  background: #fff5dd;
+}
+
+
+/* =====================================================
+   INFORMATION TEXT
+===================================================== */
+
+.deposit-info-card h3 {
+  margin: 0 0 3px;
+
+  color: #092b50;
+
+  font-size: 13px;
+}
+
+.deposit-info-card p {
+  margin: 0;
+
+  color: #7890a8;
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+
+/* =====================================================
+   LARGE TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .deposit-main {
+    padding: 25px;
+  }
+
+  .deposit-content {
+    grid-template-columns: 1fr;
+  }
+
+  .deposit-preview-card {
+    min-height: 300px;
+  }
+
+  .deposit-form-card {
+    min-height: auto;
+  }
+
+  .deposit-info-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   COMMON SIDEBAR HANDLES ITSELF
+===================================================== */
+
+@media (max-width: 750px) {
+
+  .deposit-main {
+    padding: 20px 16px 28px;
+
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .deposit-page-header {
+    margin-bottom: 22px;
+  }
+
+  .deposit-page-header h1 {
+    font-size: 27px;
+  }
+
+  .deposit-subtitle {
+    font-size: 13px;
+  }
+
+  .deposit-content {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .deposit-form-card {
+    padding: 24px 20px;
+
+    border-radius: 16px;
+  }
+
+  .deposit-preview-card {
+    min-height: 270px;
+
+    border-radius: 16px;
+  }
+
+  .deposit-info-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+  .deposit-main {
+    padding: 18px 12px 24px;
+  }
+
+  .deposit-page-header h1 {
+    font-size: 23px;
+  }
+
+  .deposit-subtitle {
+    font-size: 12px;
+  }
+
+  .deposit-form-card {
+    padding: 20px 16px;
+  }
+
+  .deposit-form-card h2 {
+    font-size: 22px;
+  }
+
+  .deposit-description {
+    font-size: 13px;
+  }
+
+  .deposit-input-wrapper {
+    height: 48px;
+  }
+
+  .input-icon {
+    width: 45px;
+
+    min-width: 45px;
+  }
+
+  .deposit-preview-card {
+    min-height: 240px;
+  }
+
+  .preview-amount strong {
+    max-width: 220px;
+
+    font-size: 21px;
+  }
+
+  .preview-amount span {
+    font-size: 27px;
+  }
+
+  .preview-text {
+    margin-left: 20px;
+
+    margin-right: 20px;
+
+    font-size: 11px;
+  }
+
+  .deposit-info-card {
+    padding: 14px;
+  }
+
+}
