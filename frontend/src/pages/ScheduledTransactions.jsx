@@ -50,7 +50,7 @@ function ScheduledTransactions() {
       }
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/scheduled`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/scheduled`,
         {
           method: "GET",
           headers: {
@@ -244,7 +244,7 @@ function ScheduledTransactions() {
       // -----------------------------------
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/scheduled`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/scheduled`,
         {
           method: "POST",
 
@@ -265,9 +265,7 @@ function ScheduledTransactions() {
               `${scheduledDate}T${scheduledTime}`,
 
             frequency: frequency,
-
-            recipient_account_id:
-              Number(recipientAccountId),
+recipient_account_id: recipientAccountId.trim(),
 
             pin: pin
 
@@ -374,7 +372,7 @@ function ScheduledTransactions() {
 
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}api/scheduled/${scheduleId}/cancel`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/scheduled/${scheduleId}/cancel`,
         {
           method: "PUT",
 
