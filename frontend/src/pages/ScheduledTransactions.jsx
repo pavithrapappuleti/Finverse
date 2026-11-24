@@ -244,7 +244,7 @@ function ScheduledTransactions() {
       // -----------------------------------
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/scheduled",
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/scheduled`,
         {
           method: "POST",
 
@@ -374,7 +374,7 @@ function ScheduledTransactions() {
 
 
       const response = await fetch(
-        `http://127.0.0.1:5000/api/scheduled/${scheduleId}/cancel`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}api/scheduled/${scheduleId}/cancel`,
         {
           method: "PUT",
 

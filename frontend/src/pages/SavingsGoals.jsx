@@ -160,7 +160,7 @@ function SavingsGoals() {
 
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/savings",
+       `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}api/savings`,
         {
           method: "POST",
 
@@ -304,7 +304,7 @@ function SavingsGoals() {
 
 
       const response = await fetch(
-        `http://127.0.0.1:5000/api/savings/${selectedGoal.goal_id}/add-money`,
+        `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}api/savings/${selectedGoal.goal_id}/add-money`,
         {
           method: "POST",
 
