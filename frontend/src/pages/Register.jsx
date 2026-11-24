@@ -396,7 +396,7 @@ function Register() {
       // ===================================================
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/register",
+  `${import.meta.env.VITE_API_URL}/api/register`,
         {
           method: "POST",
           body: dataToSend,

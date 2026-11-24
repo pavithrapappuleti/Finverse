@@ -42,7 +42,7 @@ function SavingsGoals() {
       setError("");
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/savings",
+        `${import.meta.env.VITE_API_URL}/api/savings`,
         {
           method: "GET",
 

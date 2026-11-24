@@ -50,7 +50,7 @@ function ScheduledTransactions() {
       }
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/scheduled",
+        `${import.meta.env.VITE_API_URL}/api/scheduled`,
         {
           method: "GET",
           headers: {

@@ -45,7 +45,7 @@ function ResetPassword() {
       setLoading(true);
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/forgot-password",
+         `${import.meta.env.VITE_API_URL}/api/forgot-password`,
         {
           method: "POST",
           headers: {

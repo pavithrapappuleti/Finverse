@@ -45,7 +45,7 @@ function History() {
       setError("");
 
       const response = await fetch(
-        "http://127.0.0.1:5000/api/history",
+          `${import.meta.env.VITE_API_URL}/api/history`,
         {
           method: "GET",
           headers: {

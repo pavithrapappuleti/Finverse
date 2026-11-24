@@ -31,3 +31,4 @@ logs/
 .vscode/
 .idea/
 .DS_Store
+backend/ca.pem
