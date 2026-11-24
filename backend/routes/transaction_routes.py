@@ -161,11 +161,15 @@ def deposit_money():
 
         db.session.rollback()
 
-        print("Deposit Error:", e)
+        import traceback
+
+        print("========== WITHDRAWAL ERROR ==========")
+        traceback.print_exc()
+        print("======================================")
 
         return jsonify({
             "status": "error",
-            "message": "Deposit failed",
+            "message": "Withdrawal failed",
             "error": str(e)
         }), 500
 
