@@ -1034,14 +1034,9 @@ def forgot_password():
         # =================================================
 
         message = Message(
-
-            subject="FINVERSE - Password Reset OTP",
-
-            sender=mail.username,
-
-            recipients=[email]
-
-        )
+    subject="FINVERSE - Password Reset OTP",
+    recipients=[email]
+)
 
         message.body = f"""
 

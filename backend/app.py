@@ -80,19 +80,17 @@ app.config.from_object(Config)
 # Replace these two values with
 # your FINVERSE Gmail and App Password
 
-app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 587
+app.config["MAIL_SERVER"] = os.getenv("MAIL_SERVER", "smtp.gmail.com")
+app.config["MAIL_PORT"] = int(os.getenv("MAIL_PORT", 587))
 app.config["MAIL_USE_TLS"] = True
 
-app.config["MAIL_USERNAME"] = "bankingfinverse@gmail.com"
-app.config["MAIL_PASSWORD"] = "wshv fqkn sexx rugw"
+app.config["MAIL_USERNAME"] = os.getenv("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"] = os.getenv("MAIL_PASSWORD")
 
-app.config["MAIL_DEFAULT_SENDER"] = "bankingfinverse@gmail.com"
+app.config["MAIL_DEFAULT_SENDER"] = os.getenv("MAIL_DEFAULT_SENDER")
 
 # Initialize Flask-Mail
-
 mail.init_app(app)
-
 
 # --------------------------------
 # JWT
