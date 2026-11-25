@@ -506,3 +506,52 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* EMAIL OTP SECTION */
+
+.transfer-otp-section {
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid rgba(80, 150, 255, 0.25);
+  border-radius: 14px;
+  background: rgba(60, 120, 220, 0.06);
+}
+
+.transfer-otp-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.transfer-otp-heading span {
+  font-size: 23px;
+}
+
+.transfer-otp-heading h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.transfer-otp-section > p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.transfer-otp-expiry {
+  font-size: 12px !important;
+  opacity: 0.75;
+  margin-top: 8px;
+}
+
+.transfer-otp-section .transfer-check-balance {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.transfer-otp-section .transfer-check-balance:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

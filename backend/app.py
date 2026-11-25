@@ -18,7 +18,7 @@ from models.scheduled_transaction import ScheduledTransaction
 from models.savings_goal import SavingsGoal
 from models.savings_goal_contribution import SavingsGoalContribution
 from models.password_reset import PasswordReset
-
+from models.pending_transfer import PendingTransfer
 
 # --------------------------------
 # Routes
