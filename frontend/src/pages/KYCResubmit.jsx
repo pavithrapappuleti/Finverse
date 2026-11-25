@@ -213,7 +213,7 @@ function KYCResubmit() {
 
 
             const response = await fetch(
-                 `${import.meta.env.VITE_API_URL}/api/kyc/resubmit`,
+                 `${import.meta.env.VITE_API_URL}/api/auth/kyc/resubmit`,
                 {
                     method: "PUT",
                     body: dataToSend
