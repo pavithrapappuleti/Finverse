@@ -35,8 +35,7 @@ from utils.virtual_card_utils import (
     generate_expiry_date
 )
 
-from flask_mail import Message
-from extensions import mail
+from gmail_service import send_email
 
 
 # =========================================================
@@ -960,11 +959,6 @@ def forgot_password():
 
     otp = generate_otp()
 
-    print(
-        "Generated OTP:",
-        otp
-    )
-
     # =====================================================
     # HASH OTP
     # =====================================================
@@ -1030,16 +1024,13 @@ def forgot_password():
         db.session.commit()
 
         # =================================================
-        # CREATE EMAIL
+        # SEND EMAIL USING GOOGLE GMAIL API
         # =================================================
 
-        message = Message(
-    subject="FINVERSE - Password Reset OTP",
-    recipients=[email]
-)
-
-        message.body = f"""
-
+        send_email(
+            to_email=email,
+            subject="FINVERSE - Password Reset OTP",
+            body=f"""
 Hello {user.full_name},
 
 We received a request to reset your FINVERSE account password.
@@ -1054,14 +1045,8 @@ If you did not request a password reset, please ignore this email.
 
 Regards,
 FINVERSE Banking Team
-
 """
-
-        # =================================================
-        # SEND EMAIL
-        # =================================================
-
-        mail.send(message)
+        )
 
         return jsonify({
 
