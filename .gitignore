@@ -35,3 +35,11 @@ backend/ca.pem
 
 credentials.json
 token.json
+
+# Google OAuth credentials
+backend/credentials.json*
+backend/token.json
+
+# Environment variables
+.env
+backend/.env

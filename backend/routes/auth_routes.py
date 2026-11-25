@@ -432,10 +432,7 @@ def register():
         # GENERATE ACCOUNT NUMBER
         # =====================================================
 
-        account_number = (
-            "1000000000"
-            + str(new_user.user_id)
-        )
+        account_number = f"FINV{new_user.user_id:08d}"
 
         # =====================================================
         # CREATE BANK ACCOUNT
