@@ -1,3 +1,4 @@
+import os
 from flask import Blueprint, request, jsonify, send_file
 
 from werkzeug.security import check_password_hash
@@ -423,7 +424,15 @@ def reject_user_kyc(user_id):
         # FRONTEND RESUBMISSION URL
         # -------------------------------------------------
 
-        frontend_url = "http://localhost:5173"
+        frontend_url = os.getenv(
+            "FRONTEND_URL",
+            "https://finverse-flax.vercel.app"
+        )
+
+        resubmission_url = (
+            f"{frontend_url.rstrip('/')}/kyc-resubmit"
+            f"?token={raw_token}"
+        )
 
         resubmission_url = (
             f"{frontend_url}/kyc-resubmit"
