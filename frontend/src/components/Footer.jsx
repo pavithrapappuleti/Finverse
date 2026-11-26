@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -19,14 +20,11 @@ function Footer() {
     };
   }, []);
 
-  /* =====================================================
-     FOOTER NAVIGATION
-  ===================================================== */
+  /* FOOTER NAVIGATION */
 
   const handleNavigation = (path) => {
     navigate(path);
 
-    // Scroll to top after changing page
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -34,110 +32,52 @@ function Footer() {
   };
 
   const links = [
-    {
-      name: "Home",
-      path: "/",
-    },
-    {
-      name: "About",
-      path: "/about",
-    },
-    {
-      name: "Features",
-      path: "/features",
-    },
-    {
-      name: "Security",
-      path: "/security",
-    },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Features", path: "/features" },
+    { name: "Security", path: "/security" },
   ];
 
   return (
     <footer
       style={{
-        padding: mobile
-          ? "45px 6% 22px"
-          : "60px 8% 25px",
-
+        padding: mobile ? "45px 6% 22px" : "60px 8% 25px",
         background: `
-          radial-gradient(
-            circle at 10% 50%,
-            rgba(0, 190, 255, 0.40),
-            transparent 28%
-          ),
-          radial-gradient(
-            circle at 85% 20%,
-            rgba(23, 105, 255, 0.35),
-            transparent 30%
-          ),
-          linear-gradient(
-            90deg,
-            #dff8ff 0%,
-            #b9eaff 30%,
-            #f0f8ff 55%,
-            #c5e4ff 80%,
-            #e5f5ff 100%
-          )
+          radial-gradient(circle at 10% 50%, rgba(0, 190, 255, 0.40), transparent 28%),
+          radial-gradient(circle at 85% 20%, rgba(23, 105, 255, 0.35), transparent 30%),
+          linear-gradient(90deg, #dff8ff 0%, #b9eaff 30%, #f0f8ff 55%, #c5e4ff 80%, #e5f5ff 100%)
         `,
-
         color: "black",
-
         boxSizing: "border-box",
-
         width: "100%",
       }}
     >
 
-      {/* =====================================================
-          TOP FOOTER
-      ===================================================== */}
+      {/* TOP FOOTER */}
 
       <div
         style={{
           display: "flex",
-
-          flexDirection: mobile
-            ? "column"
-            : "row",
-
+          flexDirection: mobile ? "column" : "row",
           justifyContent: "space-between",
-
-          alignItems: mobile
-            ? "flex-start"
-            : "center",
-
-          gap: mobile
-            ? "28px"
-            : "20px",
-
+          alignItems: mobile ? "flex-start" : "center",
+          gap: mobile ? "28px" : "20px",
           paddingBottom: "30px",
-
-          borderBottom:
-            "1px solid rgba(0,0,0,0.12)",
-
+          borderBottom: "1px solid rgba(0,0,0,0.12)",
           width: "100%",
-
           boxSizing: "border-box",
         }}
       >
 
-        {/* =====================================================
-            BRAND
-        ===================================================== */}
+        {/* BRAND */}
 
         <div>
           <h2
             style={{
-              fontSize: mobile
-                ? "20px"
-                : "22px",
-
+              fontSize: mobile ? "20px" : "22px",
               letterSpacing: "2px",
-
               margin: 0,
-
               color: "#06182d",
-
               fontWeight: "800",
             }}
           >
@@ -147,13 +87,9 @@ function Footer() {
           <p
             style={{
               marginTop: "8px",
-
               marginBottom: 0,
-
               color: "#26384f",
-
               fontSize: "13px",
-
               lineHeight: "1.6",
             }}
           >
@@ -161,129 +97,163 @@ function Footer() {
           </p>
         </div>
 
-
-        {/* =====================================================
-            FOOTER LINKS
-        ===================================================== */}
+        {/* FOOTER LINKS */}
 
         <div
           style={{
             display: "flex",
-
             flexWrap: "wrap",
-
-            gap: mobile
-              ? "15px 22px"
-              : "25px",
-
+            gap: mobile ? "15px 22px" : "25px",
             alignItems: "center",
           }}
         >
-
           {links.map((item) => (
             <button
               key={item.name}
-
-              onClick={() =>
-                handleNavigation(item.path)
-              }
-
-              onMouseEnter={() =>
-                setHovered(item.name)
-              }
-
-              onMouseLeave={() =>
-                setHovered("")
-              }
-
+              onClick={() => handleNavigation(item.path)}
+              onMouseEnter={() => setHovered(item.name)}
+              onMouseLeave={() => setHovered("")}
               style={{
                 border: "none",
-
                 background: "transparent",
-
-                color:
-                  hovered === item.name
-                    ? "#1769ff"
-                    : "#06182d",
-
+                color: hovered === item.name ? "#1769ff" : "#06182d",
                 fontSize: "13px",
-
                 fontWeight: "600",
-
                 cursor: "pointer",
-
                 padding: 0,
-
-                transition:
-                  "all 0.25s ease",
-
-                transform:
-                  hovered === item.name
-                    ? "translateY(-2px)"
-                    : "translateY(0)",
-
-                textDecoration:
-                  hovered === item.name
-                    ? "underline"
-                    : "none",
-
+                transition: "all 0.25s ease",
+                transform: hovered === item.name
+                  ? "translateY(-2px)"
+                  : "translateY(0)",
+                textDecoration: hovered === item.name
+                  ? "underline"
+                  : "none",
                 textUnderlineOffset: "4px",
               }}
             >
               {item.name}
             </button>
           ))}
+        </div>
+
+      </div>
+
+      {/* CONTACT SUPPORT SECTION */}
+
+      <div
+        style={{
+          padding: "25px 0",
+          borderBottom: "1px solid rgba(0,0,0,0.12)",
+          display: "flex",
+          flexDirection: mobile ? "column" : "row",
+          justifyContent: "space-between",
+          alignItems: mobile ? "flex-start" : "center",
+          gap: "18px",
+        }}
+      >
+
+        <div>
+          <h3
+            style={{
+              margin: "0 0 7px",
+              fontSize: "16px",
+              color: "#06182d",
+              fontWeight: "800",
+            }}
+          >
+            Need Help? Contact Us
+          </h3>
+
+          <p
+            style={{
+              margin: 0,
+              fontSize: "13px",
+              color: "#26384f",
+              lineHeight: "1.6",
+            }}
+          >
+            Have questions or need assistance? Reach out to our support team.
+          </p>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
+          }}
+        >
+
+          {/* EMAIL */}
+
+          <a
+            href="mailto:bankingfinverse@gmail.com"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              color: "#06182d",
+              fontSize: "13px",
+              fontWeight: "600",
+              textDecoration: "none",
+              transition: "color 0.25s ease",
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.color = "#1769ff"}
+            onMouseLeave={(e) => e.currentTarget.style.color = "#06182d"}
+          >
+            <span style={{ fontSize: "17px" }}>✉</span>
+            bankingfinverse@gmail.com
+          </a>
+
+          {/* PHONE */}
+
+          <a
+            href="tel:+918125620922"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              color: "#06182d",
+              fontSize: "13px",
+              fontWeight: "600",
+              textDecoration: "none",
+              transition: "color 0.25s ease",
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.color = "#1769ff"}
+            onMouseLeave={(e) => e.currentTarget.style.color = "#06182d"}
+          >
+            <span style={{ fontSize: "17px" }}>☎</span>
+            +91 81256 20922
+          </a>
 
         </div>
       </div>
 
-
-      {/* =====================================================
-          BOTTOM FOOTER
-      ===================================================== */}
+      {/* BOTTOM FOOTER */}
 
       <div
         style={{
           paddingTop: "22px",
-
           display: "flex",
-
-          flexDirection: mobile
-            ? "column"
-            : "row",
-
+          flexDirection: mobile ? "column" : "row",
           justifyContent: "space-between",
-
-          alignItems: mobile
-            ? "flex-start"
-            : "center",
-
+          alignItems: mobile ? "flex-start" : "center",
           gap: "10px",
-
           color: "#26384f",
-
           fontSize: "12px",
-
           width: "100%",
-
           boxSizing: "border-box",
         }}
       >
 
-        <p
-          style={{
-            margin: 0,
-          }}
-        >
+        <p style={{ margin: 0 }}>
           © 2026 FINVERSE. All rights reserved.
         </p>
 
         <p
           style={{
             margin: 0,
-
             color: "#06182d",
-
             fontWeight: "600",
           }}
         >
